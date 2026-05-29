@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  /* تحسين عرض الخطوط العربية */
+  * {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer components {
+  /* زر الدعوة لاتخاذ إجراء (CTA) — ذهبي */
+  .btn-gold {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-2xl
+      bg-gold px-7 py-3 font-heading text-base font-bold text-forest
+      shadow-gold transition-all duration-200 hover:-translate-y-0.5
+      hover:bg-gold-dark hover:shadow-lg focus:outline-none focus-visible:ring-2
+      focus-visible:ring-gold focus-visible:ring-offset-2;
+  }
+
+  /* زر ثانوي — محيط */
+  .btn-outline {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-2xl
+      border-2 border-current px-7 py-3 font-heading text-base font-bold
+      transition-all duration-200 hover:-translate-y-0.5 focus:outline-none
+      focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+
+  /* زر أخضر */
+  .btn-forest {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-2xl
+      bg-forest-light px-7 py-3 font-heading text-base font-bold text-cream
+      shadow-soft transition-all duration-200 hover:-translate-y-0.5
+      hover:bg-forest focus:outline-none focus-visible:ring-2
+      focus-visible:ring-forest-light focus-visible:ring-offset-2;
+  }
+
+  .container-elm {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+}
