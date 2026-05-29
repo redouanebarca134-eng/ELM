@@ -33,13 +33,9 @@ export const SHILAJIT: Product = {
   tagline: "مكمّل طبيعي 100% غني بأكثر من 80 معدنًا وحمض الفولفيك",
   description:
     "مادة راتنجية طبيعية نادرة تتشكّل في صخور الجبال عبر مئات السنين. تحتوي على حمض الفولفيك وأكثر من 80 معدنًا وعنصرًا نادرًا. في ELM، نقدّمه لك نقيًا، مُنقّى ومُختبَرًا في مختبرنا.",
-  image:
-    "https://images.unsplash.com/photo-1610700874055-2c20b3a91b6b?auto=format&fit=crop&w=900&q=80",
-  gallery: [
-    "https://images.unsplash.com/photo-1610700874055-2c20b3a91b6b?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=900&q=80",
-  ],
+  // الصور المولّدة محليًا (ضعها في public/images/)
+  image: "/images/product.png",
+  gallery: ["/images/product.png", "/images/resin.png", "/images/hero.png"],
   price: 2900,
   oldPrice: 3900,
   rating: 4.9,

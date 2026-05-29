@@ -48,8 +48,14 @@ npm run start    # تشغيل الإنتاج
 
 المنتجات في `src/lib/products.ts`، والولايات في `src/lib/wilayas.ts`.
 
-## ملاحظة
+## الصور
 
-الصور المستخدمة حاليًا من Unsplash كعناصر نائبة (placeholders). استبدلها بصور المنتج الحقيقية في `src/lib/products.ts` وصورة البطل في `src/components/sections/Hero.tsx`.
+الصور الرئيسية لمنتج الشيلاجيت (البطل + المنتج + الراتنج) وُلِّدت بالذكاء الاصطناعي
+وتُحمَّل محليًا من `public/images/`. **ضع الملفات الثلاثة** (`hero.png`, `product.png`,
+`resin.png`) في ذلك المجلد — التفاصيل والأسماء الدقيقة في
+[`public/images/README.md`](public/images/README.md).
+
+باقي الصور (المنتجات الثانوية، صورة المختبر) لا تزال من Unsplash كعناصر نائبة؛
+استبدلها في `src/lib/products.ts` و `src/app/about/page.tsx`.
 
 > لا يحتوي الموقع على أي وعود طبية — المحتوى يركّز على الدعم الطبيعي والعافية فقط.
