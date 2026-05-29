@@ -2,14 +2,16 @@
 export const BRAND = {
   name: "ELM",
   slogan: "الصحة الطبيعية",
-  // رقم واتساب بالصيغة الدولية بدون + أو 00 (مثال للجزائر)
-  whatsapp: "213555000000",
-  email: "contact@elm-dz.com",
-  madeIn: "صُنع في الجزائر 🇩🇿 — مختبر ELM",
+  sloganFr: "la santé naturelle",
+  // رقم واتساب بالصيغة الدولية بدون + أو 00
+  whatsapp: "213697856027",
+  email: "redouanebarca134@gmail.com",
+  city: "الجزائر العاصمة",
+  madeIn: "منتجات طبيعية مختارة بعناية — الجزائر 🇩🇿",
   socials: {
-    tiktok: "https://www.tiktok.com/@elm",
-    instagram: "https://www.instagram.com/elm",
-    facebook: "https://www.facebook.com/elm",
+    tiktok: "https://www.tiktok.com/@elm3692",
+    instagram: "https://www.instagram.com/elm.l.s.n/",
+    facebook: "https://www.facebook.com/profile.php?id=61586129843361",
   },
 } as const;
 

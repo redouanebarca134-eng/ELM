@@ -14,7 +14,7 @@ export default function Hero() {
       {/* الخلفية المعدنية الداكنة */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero.png"
+          src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80"
           alt="جبال داكنة — مصدر الشيلاجيت الطبيعي"
           fill
           priority
@@ -34,7 +34,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 font-heading text-sm font-bold text-gold"
           >
-            🏔️ شيلاجيت أصلي من مختبر ELM
+            🏔️ شيلاجيت أصلي 100% — ELM
           </motion.span>
 
           <motion.h1
@@ -52,8 +52,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-5 text-lg leading-relaxed text-cream/85 sm:text-xl"
           >
-            {SHILAJIT.shortName} الأصلي — مكمّل طبيعي 100% من مختبرنا، غني بأكثر
-            من 80 معدنًا وحمض الفولفيك
+            {SHILAJIT.shortName} من ELM — راتنج طبيعي 100% مختار بعناية، غني
+            بأكثر من 80 معدنًا وحمض الفولفيك
           </motion.p>
 
           <motion.div

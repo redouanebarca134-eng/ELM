@@ -13,9 +13,17 @@ export const metadata: Metadata = {
 };
 
 const VALUES = [
-  { icon: Leaf, title: "الطبيعة", text: "نختار أنقى المكوّنات من مصادر طبيعية." },
-  { icon: ShieldCheck, title: "الجودة", text: "كل منتج مُنقّى ومُختبَر في مختبرنا." },
-  { icon: HeartHandshake, title: "الثقة", text: "شفافية كاملة مع عملائنا." },
+  { icon: Leaf, title: "الطبيعة", text: "منتجات طبيعية 100% من مصادر موثوقة." },
+  {
+    icon: ShieldCheck,
+    title: "الجودة",
+    text: "منتجات مختارة بعناية لنقائها وجودتها.",
+  },
+  {
+    icon: HeartHandshake,
+    title: "المرافقة",
+    text: "نصائح ومرافقة شخصية لكل عميل.",
+  },
 ];
 
 export default function AboutPage() {
@@ -29,7 +37,8 @@ export default function AboutPage() {
             قصة ELM
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-cream/85">
-            وُلدت ELM من قناعة بسيطة — أن الطبيعة تملك ما يحتاجه جسمنا حقًا.
+            علامة جزائرية للصحة الطبيعية — منتجات مختارة بعناية لتحسين حياتك
+            اليومية.
           </p>
         </div>
       </section>
@@ -41,7 +50,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-soft">
               <Image
                 src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80"
-                alt="مختبر ELM"
+                alt="ELM — الصحة الطبيعية"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -50,15 +59,15 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <span className="flex items-center gap-2 font-heading text-sm font-bold text-gold">
-              <FlaskConical className="h-4 w-4" /> من مختبرنا في الجزائر
+              <FlaskConical className="h-4 w-4" /> من الجزائر العاصمة
             </span>
             <h2 className="mt-2 font-heading text-3xl font-extrabold text-forest">
               رسالتنا
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink/70">
-              من مختبرنا في الجزائر، نختار أنقى المكوّنات الطبيعية ونحوّلها إلى
-              مكمّلات تثق بها عائلتك. رسالتنا: صحة طبيعية، شفافة، وفي متناول
-              الجميع.
+              ELM علامة جزائرية للصحة الطبيعية. نختار لك منتجات طبيعية بعناية
+              لتحسين حياتك اليومية، ونرافقك بنصائح شخصية في كل خطوة. هدفنا: صحة
+              طبيعية، شفافة، وفي متناول الجميع.
             </p>
             <p className="mt-4 font-heading font-bold text-forest">
               {BRAND.madeIn}

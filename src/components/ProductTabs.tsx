@@ -40,16 +40,23 @@ export default function ProductTabs({ product }: { product: Product }) {
         {tab === "desc" && <p className="text-lg">{product.description}</p>}
 
         {tab === "usage" && (
-          <ol className="space-y-3">
-            {product.usage.map((step, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-gold font-heading text-sm font-bold text-forest">
-                  {i + 1}
-                </span>
-                <span className="pt-0.5">{step}</span>
-              </li>
-            ))}
-          </ol>
+          <div className="space-y-5">
+            <ol className="space-y-3">
+              {product.usage.map((step, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-gold font-heading text-sm font-bold text-forest">
+                    {i + 1}
+                  </span>
+                  <span className="pt-0.5">{step}</span>
+                </li>
+              ))}
+            </ol>
+            {product.warning && (
+              <p className="rounded-2xl bg-sand/50 p-4 text-sm text-ink/70">
+                ⚠️ {product.warning}
+              </p>
+            )}
+          </div>
         )}
 
         {tab === "ingredients" && <p className="text-lg">{product.ingredients}</p>}

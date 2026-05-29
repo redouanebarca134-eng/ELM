@@ -111,9 +111,9 @@ export default function HomePage() {
           <SectionHeading light title="لماذا شيلاجيت ELM؟" />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
-              "مختبرنا الخاص يضمن النقاء والجودة",
-              "100% طبيعي بدون إضافات",
-              "علامة جزائرية تفهم احتياجاتك",
+              "منتجات مختارة بعناية لنقائها وجودتها",
+              "100% طبيعي بدون إضافات صناعية",
+              "نصائح ومرافقة شخصية لكل عميل",
             ].map((point, i) => (
               <Reveal key={point} delay={i * 0.08}>
                 <div className="flex h-full items-start gap-3 rounded-2xl border border-cream/10 bg-cream/5 p-6">
