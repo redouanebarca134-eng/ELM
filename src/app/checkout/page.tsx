@@ -77,7 +77,7 @@ export default function CheckoutPage() {
     const snapshot = { form, items, shipping: shippingCost, total };
     setConfirmed(snapshot);
     clear();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    globalThis.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   // ===== صفحة التأكيد =====

@@ -13,7 +13,7 @@ export default function ContactPage() {
     e.preventDefault();
     // يفتح واتساب برسالة معبأة مسبقًا
     const msg = `الاسم: ${form.name}\nالهاتف: ${form.phone}\nالرسالة: ${form.message}`;
-    window.open(buildWhatsAppLink(msg), "_blank");
+    globalThis.open(buildWhatsAppLink(msg), "_blank");
     setSent(true);
   }
 
