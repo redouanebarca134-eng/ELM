@@ -9,7 +9,7 @@ import { BRAND } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "عن ELM",
   description:
-    "قصة ELM — علامة جزائرية للصحة الطبيعية، من مختبرنا نقدّم أنقى المكمّلات الطبيعية التي تثق بها عائلتك.",
+    "قصة ELM — علامة جزائرية للصحة الطبيعية، نختار لك منتجات طبيعية بعناية ونرافقك بنصائح شخصية.",
 };
 
 const VALUES = [

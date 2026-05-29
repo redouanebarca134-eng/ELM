@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     default: "ELM — الصحة الطبيعية | شيلاجيت نقي وشاي أعشاب طبيعي",
     template: "%s | ELM",
   },
+  description:
     "شيلاجيت ELM الأصلي — راتنج طبيعي 100% مختار بعناية، غني بأكثر من 80 معدنًا وحمض الفولفيك. دفع عند الاستلام وتوصيل لكل الولايات.",
   keywords: [
     "شيلاجيت",
@@ -34,14 +35,19 @@ export const metadata: Metadata = {
     "حمض الفولفيك",
     "صحة طبيعية",
     "الجزائر",
+    "شاي التنحيف",
+    "Slim Tea",
   ],
   openGraph: {
     title: "ELM — شيلاجيت أصلي 100% طبيعي",
+    description:
       "راتنج طبيعي 100% مختار بعناية من ELM، غني بأكثر من 80 معدنًا وحمض الفولفيك. دفع عند الاستلام • توصيل لكل الولايات.",
     type: "website",
     locale: "ar_DZ",
     siteName: "ELM",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "ELM شيلاجيت" }],
+    images: [
+      { url: "/og-image.svg", width: 1200, height: 630, alt: "ELM شيلاجيت" },
+    ],
   },
   icons: { icon: "/favicon.svg" },
 };

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="space-y-4">
           <Logo variant="light" />
           <p className="max-w-xs text-sm leading-relaxed text-cream/80">
-            {BRAND.slogan} — مكمّلات طبيعية 100% من مختبر ELM في الجزائر.
+            {BRAND.slogan} — منتجات طبيعية 100% مختارة بعناية من ELM في الجزائر.
           </p>
         </div>
 

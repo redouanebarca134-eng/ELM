@@ -33,7 +33,13 @@ export default function Logo({
             <circle cx="29" cy="10" r="3.5" />
           </g>
           {/* ثمرة ذهبية */}
-          <circle cx="30" cy="20" r="2.6" className="text-gold" fill="currentColor" />
+          <circle
+            cx="30"
+            cy="20"
+            r="2.6"
+            className="text-gold"
+            fill="currentColor"
+          />
           {/* الجذع والجذور */}
           <path
             d="M24 17v14M24 31c-3 2-5 3-8 3.5M24 31c3 2 5 3 8 3.5M24 31c-1.5 2.5-2 4-2 6M24 31c1.5 2.5 2 4 2 6"

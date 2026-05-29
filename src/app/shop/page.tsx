@@ -17,7 +17,7 @@ export default function ShopPage() {
             متجر ELM
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-cream/80">
-            مكمّلات طبيعية 100% من مختبرنا — جودة مضمونة ودفع عند الاستلام.
+            منتجات طبيعية 100% مختارة بعناية — جودة مضمونة ودفع عند الاستلام.
           </p>
         </div>
       </section>
