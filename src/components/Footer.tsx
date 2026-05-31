@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container-elm grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         {/* الشعار والشعار النصي */}
         <div className="space-y-4">
-          <Logo variant="light" />
+          <Logo variant="light" showWordmark />
           <p className="max-w-xs text-sm leading-relaxed text-cream/80">
             {BRAND.slogan} — منتجات طبيعية 100% مختارة بعناية من ELM في الجزائر.
           </p>
