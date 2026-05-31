@@ -5,6 +5,7 @@ import {
   Dumbbell,
   Scale,
   HeartPulse,
+  BadgeCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -87,8 +88,8 @@ export const USAGE_STEPS: { step: number; text: string }[] = [
 
 // بنود الثقة
 export const TRUST_BADGES: { icon: LucideIcon; label: string }[] = [
-  { icon: ShieldCheck, label: "عضوي 100%" },
-  { icon: Brain, label: "مختبر معتمد" },
+  { icon: ShieldCheck, label: "عضوي 100% Bio" },
+  { icon: BadgeCheck, label: "منتج معتمد" },
   { icon: HeartPulse, label: "جودة مضمونة" },
   { icon: Scale, label: "دفع عند الاستلام" },
 ];

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Truck, FlaskConical } from "lucide-react";
+import { ShieldCheck, Truck, BadgeCheck } from "lucide-react";
 import { getProduct, PRODUCTS } from "@/lib/products";
 import { TESTIMONIALS } from "@/lib/content";
 import ProductGallery from "@/components/ProductGallery";
@@ -83,7 +83,7 @@ export default async function ProductPage({
           {/* بنود الثقة */}
           <div className="mt-8 grid grid-cols-3 gap-3 border-t border-sand pt-6">
             <TrustItem icon={ShieldCheck} label="عضوي 100%" />
-            <TrustItem icon={FlaskConical} label="مختبر معتمد" />
+            <TrustItem icon={BadgeCheck} label="عضوي معتمد Bio" />
             <TrustItem icon={Truck} label="دفع عند الاستلام" />
           </div>
         </div>
