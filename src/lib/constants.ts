@@ -34,3 +34,9 @@ export const SHIPPING = {
 export function buildWhatsAppLink(message: string): string {
   return `https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(message)}`;
 }
+
+// معرّفات البكسل للإعلانات (التتبّع وإعادة الاستهداف)
+export const PIXELS = {
+  facebook: "1603110284204859", // Meta/Facebook Pixel ID
+  tiktok: "", // ضع معرّف TikTok Pixel هنا عند توفّره
+} as const;

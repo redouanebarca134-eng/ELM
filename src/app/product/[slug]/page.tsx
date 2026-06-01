@@ -10,6 +10,7 @@ import ProductTabs from "@/components/ProductTabs";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import Stars from "@/components/Stars";
+import ViewContentTracker from "@/components/ViewContentTracker";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -47,6 +48,11 @@ export default async function ProductPage({
 
   return (
     <div className="bg-cream">
+      <ViewContentTracker
+        slug={product.slug}
+        name={product.name}
+        price={product.price}
+      />
       {/* مسار التنقل */}
       <div className="container-elm pt-6 text-sm text-ink/50">
         <Link href="/" className="hover:text-gold">

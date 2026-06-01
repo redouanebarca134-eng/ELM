@@ -6,6 +6,7 @@ import { Minus, Plus, ShoppingCart, Check } from "lucide-react";
 import type { Product } from "@/lib/products";
 import { useCart } from "@/context/CartContext";
 import { formatPrice, cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/pixel";
 
 export default function AddToCartForm({ product }: { product: Product }) {
   const router = useRouter();
@@ -32,12 +33,26 @@ export default function AddToCartForm({ product }: { product: Product }) {
 
   function handleAdd() {
     addItem(buildItem(), quantity);
+    trackEvent("AddToCart", {
+      content_name: product.name,
+      content_ids: [product.slug],
+      content_type: "product",
+      value: pack.price * quantity,
+      currency: "DZD",
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 1800);
   }
 
   function handleBuyNow() {
     addItem(buildItem(), quantity);
+    trackEvent("InitiateCheckout", {
+      content_name: product.name,
+      content_ids: [product.slug],
+      content_type: "product",
+      value: pack.price * quantity,
+      currency: "DZD",
+    });
     router.push("/checkout");
   }
 

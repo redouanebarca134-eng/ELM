@@ -7,6 +7,7 @@ import { useCart } from "@/context/CartContext";
 import { WILAYAS } from "@/lib/wilayas";
 import { SHIPPING, buildWhatsAppLink } from "@/lib/constants";
 import { formatPrice, cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/pixel";
 
 type DeliveryType = "home" | "stopdesk";
 
@@ -75,6 +76,13 @@ export default function CheckoutPage() {
     ev.preventDefault();
     if (!validate()) return;
     const snapshot = { form, items, shipping: shippingCost, total };
+    trackEvent("Purchase", {
+      value: total,
+      currency: "DZD",
+      content_ids: items.map((i) => i.slug),
+      content_type: "product",
+      num_items: items.reduce((sum, i) => sum + i.quantity, 0),
+    });
     setConfirmed(snapshot);
     clear();
     globalThis.scrollTo({ top: 0, behavior: "smooth" });

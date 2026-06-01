@@ -5,6 +5,7 @@ import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import FacebookPixel from "@/components/FacebookPixel";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
@@ -58,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={`${tajawal.variable} ${almarai.variable}`}>
+        <FacebookPixel />
         <CartProvider>
           <Header />
           <main className="min-h-screen">{children}</main>
