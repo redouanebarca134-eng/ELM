@@ -11,6 +11,8 @@ import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import Stars from "@/components/Stars";
 import ViewContentTracker from "@/components/ViewContentTracker";
+import CountdownTimer from "@/components/CountdownTimer";
+import StockBadge from "@/components/StockBadge";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -81,6 +83,14 @@ export default async function ProductPage({
           <p className="mt-4 text-lg leading-relaxed text-ink/70">
             {product.tagline}
           </p>
+
+          <div className="mt-4">
+            <StockBadge slug={product.slug} />
+          </div>
+
+          <div className="mt-4">
+            <CountdownTimer />
+          </div>
 
           <div className="mt-6">
             <AddToCartForm product={product} />

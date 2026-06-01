@@ -6,6 +6,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import FacebookPixel from "@/components/FacebookPixel";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import SocialProofPopup from "@/components/SocialProofPopup";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
+import ExitPopup from "@/components/ExitPopup";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
@@ -61,10 +65,14 @@ export default function RootLayout({
       <body className={`${tajawal.variable} ${almarai.variable}`}>
         <FacebookPixel />
         <CartProvider>
+          <AnnouncementBar />
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen pb-20 md:pb-0">{children}</main>
           <Footer />
           <WhatsAppFloat />
+          <StickyMobileCTA />
+          <SocialProofPopup />
+          <ExitPopup />
         </CartProvider>
       </body>
     </html>
