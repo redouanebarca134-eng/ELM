@@ -15,7 +15,7 @@ export default function ProductGallery({
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-square overflow-hidden rounded-2xl bg-sand/40 shadow-soft">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-sand/40 shadow-soft">
         <Image
           src={images[active]}
           alt={alt}
