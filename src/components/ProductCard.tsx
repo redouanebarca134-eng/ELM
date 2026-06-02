@@ -7,7 +7,7 @@ import Stars from "./Stars";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft transition-shadow hover:shadow-lg">
+    <div className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_-12px_rgba(201,162,75,0.45)]">
       <Link
         href={`/product/${product.slug}`}
         className="relative block aspect-square overflow-hidden bg-sand/40"
