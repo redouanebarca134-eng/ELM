@@ -9,6 +9,7 @@ import Accordion from "@/components/Accordion";
 import OfferBlock from "@/components/OfferBlock";
 import Stars from "@/components/Stars";
 import BenefitsGrid from "@/components/sections/BenefitsGrid";
+import TrustSection from "@/components/sections/TrustSection";
 import Parallax from "@/components/Parallax";
 import WaveDivider from "@/components/WaveDivider";
 import GoldParticles from "@/components/GoldParticles";
@@ -92,6 +93,9 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+      {/* قسم الثقة ومكافحة التقليد */}
+      <TrustSection />
 
       {/* الفوائد */}
       <section id="benefits" className="section-pad bg-cream">
