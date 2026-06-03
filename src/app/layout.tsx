@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import FacebookPixel from "@/components/FacebookPixel";
+import ScrollProgress from "@/components/ScrollProgress";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import SocialProofPopup from "@/components/SocialProofPopup";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
@@ -64,6 +65,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <body className={`${tajawal.variable} ${almarai.variable}`}>
         <FacebookPixel />
+        <ScrollProgress />
         <CartProvider>
           <AnnouncementBar />
           <Header />
