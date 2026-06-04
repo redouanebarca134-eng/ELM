@@ -18,7 +18,7 @@ const VALUES = [
 
 export default function BrandStory() {
   return (
-    <section className="relative flex items-center overflow-hidden bg-[linear-gradient(to_bottom,#14352A_0%,#10231b_55%,#0b140f_100%)] section-pad">
+    <section className="relative flex items-center overflow-hidden section-pad">
       {/* توهّجات سينمائية + غبار ذهبي */}
       <div className="animate-glow-pulse absolute -top-24 start-[12%] h-80 w-80 rounded-full bg-gold/20 blur-3xl" />
       <div

@@ -14,6 +14,7 @@ import TrustSection from "@/components/sections/TrustSection";
 import Parallax from "@/components/Parallax";
 import WaveDivider from "@/components/WaveDivider";
 import GoldParticles from "@/components/GoldParticles";
+import Starfield from "@/components/Starfield";
 import {
   TESTIMONIALS,
   FAQS,
@@ -29,11 +30,17 @@ const FOREST = "#14352A";
 export default function HomePage() {
   return (
     <>
-      {/* قصة العلامة ELM (أول ما يظهر) */}
-      <BrandStory />
-
-      {/* القسم البطولي */}
-      <Hero />
+      {/* مشهد ليلي متواصل: القصة + البطل تحت سماء نجوم واحدة */}
+      <div className="relative overflow-hidden bg-[linear-gradient(to_bottom,#14352A_0%,#10231b_40%,#0b140f_100%)]">
+        {/* سماء النجوم تمتدّ عبر القسمين */}
+        <Starfield count={70} />
+        <div className="relative z-10">
+          {/* قصة العلامة ELM (أول ما يظهر) */}
+          <BrandStory />
+          {/* القسم البطولي */}
+          <Hero />
+        </div>
+      </div>
 
       {/* بندج الثقة */}
       <section className="bg-forest py-8">
