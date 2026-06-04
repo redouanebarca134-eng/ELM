@@ -65,6 +65,23 @@
     @apply py-16 sm:py-20 lg:py-24;
   }
 
+  /* اتجاه 2026: زجاج مصنفر راقٍ (glassmorphism) */
+  .glass {
+    @apply border border-white/40 bg-white/60 backdrop-blur-xl;
+  }
+  .glass-dark {
+    @apply border border-cream/10 bg-forest/40 backdrop-blur-xl;
+  }
+
+  /* اتجاه 2026: تدرّج عضوي ناعم (mesh) */
+  .mesh-cream {
+    background-color: #faf6ec;
+    background-image:
+      radial-gradient(at 18% 20%, rgba(201, 162, 75, 0.1) 0px, transparent 50%),
+      radial-gradient(at 82% 12%, rgba(47, 126, 120, 0.08) 0px, transparent 50%),
+      radial-gradient(at 70% 85%, rgba(181, 117, 79, 0.07) 0px, transparent 50%);
+  }
+
   /* تأثير لمعان ذهبي يمرّ فوق العناصر (shimmer) */
   .gold-shimmer {
     background: linear-gradient(

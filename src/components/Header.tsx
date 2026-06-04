@@ -15,7 +15,7 @@ export default function Header() {
   const { count } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sand/60 bg-cream/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/40 bg-cream/70 backdrop-blur-xl">
       <div className="container-elm flex h-16 items-center justify-between gap-4">
         {/* الشعار على اليمين (RTL) */}
         <Logo />

@@ -22,6 +22,12 @@ export default {
         cream: "#FAF6EC", // fond clair
         sand: "#E8E0CE", // neutre
         ink: "#1A1A14", // texte principal
+        // اتجاه 2026: لون مكمّل هادئ (Transformative Teal) للمسات الانتعاش
+        teal: {
+          DEFAULT: "#2F7E78",
+          light: "#4FA89F",
+        },
+        clay: "#B5754F", // طين دافئ (لمسات ترابية)
       },
       fontFamily: {
         heading: ["var(--font-tajawal)", "sans-serif"],

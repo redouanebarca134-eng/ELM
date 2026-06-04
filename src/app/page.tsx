@@ -102,7 +102,7 @@ export default function HomePage() {
       <TrustSection />
 
       {/* الفوائد */}
-      <section id="benefits" className="section-pad bg-cream">
+      <section id="benefits" className="section-pad mesh-cream">
         <div className="container-elm">
           <SectionHeading
             eyebrow="الفوائد"

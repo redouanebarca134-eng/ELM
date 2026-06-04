@@ -43,7 +43,7 @@ const GUARANTEES = [
 
 export default function TrustSection() {
   return (
-    <section className="relative overflow-hidden bg-cream section-pad">
+    <section className="relative overflow-hidden mesh-cream section-pad">
       <div className="container-elm">
         <SectionHeading
           eyebrow="الثقة قبل كل شيء"
