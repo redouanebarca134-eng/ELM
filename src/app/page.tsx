@@ -30,10 +30,23 @@ const FOREST = "#14352A";
 export default function HomePage() {
   return (
     <>
-      {/* مشهد ليلي متواصل: القصة + البطل تحت سماء نجوم واحدة */}
-      <div className="relative overflow-hidden bg-[linear-gradient(to_bottom,#14352A_0%,#10231b_40%,#0b140f_100%)]">
-        {/* سماء النجوم تمتدّ عبر القسمين */}
-        <Starfield count={70} />
+      {/* مشهد ليلي متواصل واحد: القصة + البطل تحت سماء وجبال واحدة */}
+      <div className="relative overflow-hidden bg-[linear-gradient(to_bottom,#16382c_0%,#10231b_45%,#0a1713_100%)]">
+        {/* جبال مضيئة بالنجوم تغطّي كامل المشهد */}
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80"
+            alt="جبال ليلية مرصّعة بالنجوم"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-bottom opacity-25"
+          />
+          {/* تدرّج يوحّد الصورة مع لون المشهد من الأعلى والأسفل */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#13322685_0%,#10231bcc_45%,#0a1713_100%)]" />
+        </div>
+        {/* سماء النجوم تمتدّ عبر كامل المشهد */}
+        <Starfield count={90} />
         <div className="relative z-10">
           {/* قصة العلامة ELM (أول ما يظهر) */}
           <BrandStory />

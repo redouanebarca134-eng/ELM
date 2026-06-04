@@ -12,24 +12,8 @@ const reassurance = ["عضوي 100% Bio", "توصيل لكل الولايات", 
 export default function Hero() {
   return (
     <section className="relative flex min-h-[92vh] items-center overflow-hidden">
-      {/* الخلفية: جبال أسفل المشهد تذوب في سماء النجوم أعلاه */}
+      {/* الخلفية مشتركة على مستوى الصفحة — هنا فقط لمسات الإضاءة */}
       <div className="absolute inset-0">
-        {/* الجبال في النصف السفلي فقط، مع تلاشٍ للأعلى نحو السماء */}
-        <div className="absolute inset-x-0 bottom-0 top-1/3">
-          <Image
-            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80"
-            alt="جبال داكنة — مصدر الشيلاجيت الطبيعي"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-60"
-          />
-          {/* تلاشي حافّة الجبال العلوية لتندمج مع السماء */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0b140f_0%,transparent_30%,transparent_70%,rgba(11,20,16,0.85)_100%)]" />
-        </div>
-        {/* لمسة توهّج خفيفة */}
-        <div className="animate-gradient-pan absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(47,126,120,0.12),transparent_55%)]" />
-
         {/* كرات ضوئية ذهبية متوهّجة */}
         <div className="animate-glow-pulse absolute -top-20 start-[15%] h-72 w-72 rounded-full bg-gold/25 blur-3xl" />
         <div
