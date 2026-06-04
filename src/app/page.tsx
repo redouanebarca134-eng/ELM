@@ -9,6 +9,7 @@ import Accordion from "@/components/Accordion";
 import OfferBlock from "@/components/OfferBlock";
 import BenefitsGrid from "@/components/sections/BenefitsGrid";
 import TrustSection from "@/components/sections/TrustSection";
+import ProductQuiz from "@/components/sections/ProductQuiz";
 import ReviewsWall from "@/components/sections/ReviewsWall";
 import Parallax from "@/components/Parallax";
 import WaveDivider from "@/components/WaveDivider";
@@ -104,6 +105,9 @@ export default function HomePage() {
           <BenefitsGrid />
         </div>
       </section>
+
+      {/* اختبار: أي منتج يناسبك؟ */}
+      <ProductQuiz />
 
       {/* فاصل موجة نحو القسم الأخضر */}
       <WaveDivider color={FOREST} />
