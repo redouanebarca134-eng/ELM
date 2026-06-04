@@ -11,7 +11,7 @@ const reassurance = ["عضوي 100% Bio", "توصيل لكل الولايات", 
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden">
+    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-[#0b140f]">
       {/* الخلفية المعدنية الداكنة */}
       <div className="absolute inset-0">
         <Image
@@ -22,8 +22,10 @@ export default function Hero() {
           sizes="100vw"
           className="scale-105 object-cover"
         />
-        {/* تراكب أخضر متدرّج متحرّك */}
-        <div className="animate-gradient-pan absolute inset-0 bg-[linear-gradient(160deg,rgba(20,53,42,0.92),rgba(20,53,42,0.82),rgba(11,20,16,0.96))]" />
+        {/* تراكب عمودي يبدأ بنفس لون نهاية قسم القصة (انتقال سلس) */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0b140f_0%,rgba(16,35,27,0.9)_22%,rgba(20,53,42,0.78)_55%,rgba(11,20,16,0.96)_100%)]" />
+        {/* لمسة حركة خفيفة */}
+        <div className="animate-gradient-pan absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(47,126,120,0.12),transparent_55%)]" />
 
         {/* كرات ضوئية ذهبية متوهّجة */}
         <div className="animate-glow-pulse absolute -top-20 start-[15%] h-72 w-72 rounded-full bg-gold/25 blur-3xl" />
