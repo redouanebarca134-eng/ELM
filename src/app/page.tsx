@@ -7,18 +7,13 @@ import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import Accordion from "@/components/Accordion";
 import OfferBlock from "@/components/OfferBlock";
-import Stars from "@/components/Stars";
 import BenefitsGrid from "@/components/sections/BenefitsGrid";
 import TrustSection from "@/components/sections/TrustSection";
+import ReviewsWall from "@/components/sections/ReviewsWall";
 import Parallax from "@/components/Parallax";
 import WaveDivider from "@/components/WaveDivider";
 import GoldParticles from "@/components/GoldParticles";
-import {
-  TESTIMONIALS,
-  FAQS,
-  USAGE_STEPS,
-  TRUST_BADGES,
-} from "@/lib/content";
+import { FAQS, USAGE_STEPS, TRUST_BADGES } from "@/lib/content";
 import { SHILAJIT } from "@/lib/products";
 
 // ألوان الأقسام لفواصل الموجة
@@ -164,35 +159,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* آراء العملاء */}
-      <section className="bg-sand/40 section-pad">
-        <div className="container-elm">
-          <SectionHeading
-            eyebrow="آراء العملاء"
-            title="ماذا يقول عملاؤنا؟"
-            subtitle="آلاف الجزائريين يثقون بـ ELM."
-          />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {TESTIMONIALS.map((t, i) => (
-              <Reveal key={t.name} delay={i * 0.06}>
-                <figure className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-soft">
-                  <Stars rating={5} />
-                  <blockquote className="mt-3 flex-1 leading-relaxed text-ink/80">
-                    “{t.text}”
-                  </blockquote>
-                  <figcaption className="mt-4 font-heading font-bold text-forest">
-                    {t.name}
-                    <span className="font-body text-sm font-normal text-ink/50">
-                      {" "}
-                      — {t.wilaya}
-                    </span>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* جدار آراء العملاء */}
+      <ReviewsWall />
 
       {/* العرض والسعر */}
       <section id="offer" className="section-pad bg-cream">

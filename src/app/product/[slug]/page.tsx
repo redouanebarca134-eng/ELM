@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck, Truck, BadgeCheck } from "lucide-react";
 import { getProduct, PRODUCTS } from "@/lib/products";
-import { TESTIMONIALS } from "@/lib/content";
 import ProductGallery from "@/components/ProductGallery";
 import AddToCartForm from "@/components/AddToCartForm";
 import ProductTabs from "@/components/ProductTabs";
@@ -14,6 +13,8 @@ import ViewContentTracker from "@/components/ViewContentTracker";
 import CountdownTimer from "@/components/CountdownTimer";
 import StockBadge from "@/components/StockBadge";
 import ProductCinematic from "@/components/sections/ProductCinematic";
+import PriceJustification from "@/components/sections/PriceJustification";
+import ReviewsWall from "@/components/sections/ReviewsWall";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -119,30 +120,13 @@ export default async function ProductPage({
         </div>
       </section>
 
-      {/* آراء العملاء */}
-      <section className="container-elm py-8">
-        <SectionHeading eyebrow="آراء العملاء" title="تقييمات حقيقية" />
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {TESTIMONIALS.map((t) => (
-            <figure
-              key={t.name}
-              className="flex h-full flex-col rounded-2xl bg-white p-6 shadow-soft"
-            >
-              <Stars rating={5} />
-              <blockquote className="mt-3 flex-1 leading-relaxed text-ink/80">
-                “{t.text}”
-              </blockquote>
-              <figcaption className="mt-4 font-heading font-bold text-forest">
-                {t.name}
-                <span className="font-body text-sm font-normal text-ink/50">
-                  {" "}
-                  — {t.wilaya}
-                </span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+      {/* لماذا السعر؟ (للمنتجات المميّزة فقط) */}
+      {product.price >= 4000 && (
+        <PriceJustification realPrice={product.price} />
+      )}
+
+      {/* جدار آراء العملاء */}
+      <ReviewsWall />
 
       {/* منتجات ذات صلة */}
       {related.length > 0 && (
