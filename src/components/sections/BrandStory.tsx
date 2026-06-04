@@ -3,52 +3,57 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Sprout, ShieldCheck, HeartHandshake } from "lucide-react";
-import Parallax from "@/components/Parallax";
+import GoldParticles from "@/components/GoldParticles";
 
-// قصة العلامة ELM — تقديم المنشأ والرسالة والقيم بأسلوب سردي متحرّك.
+// قصة العلامة ELM — مشهد سينمائي داكن (مثل صفحة الشيلاجيت) مع شعار العلامة.
 const VALUES = [
   { icon: Sprout, title: "النقاء", text: "مكوّنات طبيعية مختارة بعناية." },
-  { icon: ShieldCheck, title: "الإثبات", text: "مُختبَر ومعتمد عضويًا — لا وعود فارغة." },
+  {
+    icon: ShieldCheck,
+    title: "الإثبات",
+    text: "مُختبَر ومعتمد عضويًا — لا وعود فارغة.",
+  },
   { icon: HeartHandshake, title: "الاحترام", text: "احترام لجسمك، لثقتك، وللطبيعة." },
 ];
 
 export default function BrandStory() {
   return (
-    <section className="relative overflow-hidden bg-cream section-pad">
-      <div className="container-elm">
+    <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-forest via-[#10231b] to-[#0b140f] section-pad">
+      {/* توهّجات سينمائية + غبار ذهبي */}
+      <div className="animate-glow-pulse absolute -top-24 start-[12%] h-80 w-80 rounded-full bg-gold/20 blur-3xl" />
+      <div
+        className="animate-glow-pulse absolute bottom-0 end-[8%] h-96 w-96 rounded-full bg-teal/20 blur-3xl"
+        style={{ animationDelay: "1.5s" }}
+      />
+      <GoldParticles count={26} />
+
+      <div className="container-elm relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* الصورة مع parallax */}
+          {/* الشعار في مشهد سينمائي */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8 }}
+            className="relative order-1 mx-auto flex max-w-md justify-center lg:order-2"
           >
-            <Parallax speed={40}>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-soft">
-                <Image
-                  src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=900&q=80"
-                  alt="ELM — الطبيعة الأصيلة"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="scale-110 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent" />
-                {/* شعار عائم */}
-                <div className="absolute bottom-5 start-5 rounded-2xl bg-cream/90 px-4 py-2 font-heading text-xl font-extrabold text-forest backdrop-blur-sm">
-                  ELM
-                  <span className="ms-2 text-xs font-medium text-forest/60">
-                    la santé naturelle
-                  </span>
-                </div>
-              </div>
-            </Parallax>
+            {/* هالة خلف الشعار */}
+            <div className="animate-glow-pulse absolute inset-0 m-auto h-72 w-72 rounded-full bg-gold/25 blur-3xl" />
+            <div className="animate-float-slow relative">
+              <Image
+                src="/logo.png"
+                alt="شعار ELM — la santé naturelle"
+                width={420}
+                height={420}
+                className="relative z-10 rounded-full object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.55)]"
+              />
+            </div>
           </motion.div>
 
           {/* النص السردي */}
-          <div>
+          <div className="order-2 lg:order-1">
             <motion.span
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="font-heading text-sm font-bold text-gold"
@@ -60,7 +65,7 @@ export default function BrandStory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6 }}
-              className="mt-2 font-heading text-3xl font-extrabold leading-tight text-forest sm:text-4xl"
+              className="mt-2 font-heading text-3xl font-extrabold leading-tight text-cream sm:text-4xl"
             >
               وُلدت ELM من رفضٍ بسيط: أن نبيع ما لا يمكن إثباته
             </motion.h2>
@@ -70,7 +75,7 @@ export default function BrandStory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="mt-5 space-y-4 text-lg leading-relaxed text-ink/75"
+              className="mt-5 space-y-4 text-lg leading-relaxed text-cream/80"
             >
               <p>
                 في السوق، يُباع الكثير من المنتجات «الطبيعية» التي ليست كذلك.
@@ -81,7 +86,7 @@ export default function BrandStory() {
                 نتأكّد من جودتها، ونعتمدها عضويًا قبل أن تصل إليك. منتج يمكنك أن
                 تثق به وتنظر إليه بثقة.
               </p>
-              <p className="font-heading font-bold text-forest">
+              <p className="font-heading font-bold text-gold">
                 صحة طبيعية، شفّافة، وفي متناول الجميع. هذه رسالتنا.
               </p>
             </motion.div>
@@ -95,13 +100,13 @@ export default function BrandStory() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="rounded-2xl border border-sand bg-white p-4 text-center shadow-soft"
+                  className="glass-dark rounded-2xl p-4 text-center"
                 >
-                  <v.icon className="mx-auto h-7 w-7 text-gold-dark" />
-                  <h3 className="mt-2 font-heading font-bold text-forest">
+                  <v.icon className="mx-auto h-7 w-7 text-gold" />
+                  <h3 className="mt-2 font-heading font-bold text-cream">
                     {v.title}
                   </h3>
-                  <p className="mt-1 text-xs text-ink/60">{v.text}</p>
+                  <p className="mt-1 text-xs text-cream/60">{v.text}</p>
                 </motion.div>
               ))}
             </div>
