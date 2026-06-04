@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import Hero from "@/components/sections/Hero";
 import StatsBand from "@/components/sections/StatsBand";
+import BrandStory from "@/components/sections/BrandStory";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import Accordion from "@/components/Accordion";
@@ -48,6 +49,9 @@ export default function HomePage() {
 
       {/* شريط الإحصائيات بأرقام متصاعدة */}
       <StatsBand />
+
+      {/* قصة العلامة ELM */}
+      <BrandStory />
 
       {/* المشكلة / لماذا */}
       <section className="section-pad bg-cream">

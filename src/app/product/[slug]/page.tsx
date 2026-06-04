@@ -13,6 +13,7 @@ import Stars from "@/components/Stars";
 import ViewContentTracker from "@/components/ViewContentTracker";
 import CountdownTimer from "@/components/CountdownTimer";
 import StockBadge from "@/components/StockBadge";
+import ProductCinematic from "@/components/sections/ProductCinematic";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
@@ -55,6 +56,9 @@ export default async function ProductPage({
         name={product.name}
         price={product.price}
       />
+      {/* صفحة الهبوط السينمائية */}
+      {product.landing && <ProductCinematic product={product} />}
+
       {/* مسار التنقل */}
       <div className="container-elm pt-6 text-sm text-ink/50">
         <Link href="/" className="hover:text-gold">
@@ -64,8 +68,11 @@ export default async function ProductPage({
         <span className="text-forest">{product.shortName}</span>
       </div>
 
-      {/* القسم الرئيسي */}
-      <section className="container-elm grid gap-10 py-8 lg:grid-cols-2 lg:gap-14">
+      {/* القسم الرئيسي — الشراء */}
+      <section
+        id="buy"
+        className="container-elm grid scroll-mt-20 gap-10 py-8 lg:grid-cols-2 lg:gap-14"
+      >
         {/* المعرض على اليمين (RTL) */}
         <ProductGallery images={product.gallery} alt={product.name} />
 
