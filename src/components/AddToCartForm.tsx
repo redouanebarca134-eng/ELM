@@ -73,46 +73,69 @@ export default function AddToCartForm({ product }: { product: Product }) {
       {/* اختيار الباقة */}
       <div>
         <h3 className="mb-3 font-heading text-sm font-bold text-forest">
-          اختر الباقة
+          اختر الباقة المناسبة لك
         </h3>
         <div className="grid gap-3">
-          {product.packs.map((p) => (
-            <button
-              key={p.id}
-              type="button"
-              onClick={() => setSelectedPackId(p.id)}
-              className={cn(
-                "flex items-center justify-between rounded-2xl border-2 p-4 text-start transition-all",
-                selectedPackId === p.id
-                  ? "border-gold bg-gold/10"
-                  : "border-sand bg-white hover:border-gold/50",
-              )}
-            >
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-heading font-bold text-forest">
-                    {p.label}
+          {product.packs.map((p) => {
+            const saving =
+              p.oldPrice && p.oldPrice > p.price
+                ? Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100)
+                : 0;
+            const isActive = selectedPackId === p.id;
+            return (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => setSelectedPackId(p.id)}
+                className={cn(
+                  "relative flex items-center justify-between rounded-2xl border-2 p-4 text-start transition-all",
+                  isActive
+                    ? "border-gold bg-gold/10 shadow-[0_8px_24px_-10px_rgba(201,162,75,0.6)]"
+                    : "border-sand bg-white hover:border-gold/50",
+                )}
+              >
+                <div className="flex items-start gap-3">
+                  {/* دائرة الاختيار */}
+                  <span
+                    className={cn(
+                      "mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border-2",
+                      isActive ? "border-gold bg-gold" : "border-sand",
+                    )}
+                  >
+                    {isActive && <Check className="h-3 w-3 text-forest" />}
                   </span>
-                  {p.badge && (
-                    <span className="rounded-full bg-gold px-2 py-0.5 text-xs font-bold text-forest">
-                      {p.badge}
-                    </span>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="font-heading font-bold text-forest">
+                        {p.label}
+                      </span>
+                      {p.badge && (
+                        <span className="rounded-full bg-gold px-2 py-0.5 text-xs font-bold text-forest">
+                          {p.badge}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-0.5 text-sm text-ink/60">{p.description}</p>
+                  </div>
+                </div>
+                <div className="flex-shrink-0 text-end">
+                  <div className="font-heading font-extrabold text-gold-dark">
+                    {formatPrice(p.price)}
+                  </div>
+                  {p.oldPrice && (
+                    <div className="text-xs text-ink/40 line-through">
+                      {formatPrice(p.oldPrice)}
+                    </div>
+                  )}
+                  {saving > 0 && (
+                    <div className="mt-1 inline-block rounded-full bg-forest-light/15 px-2 py-0.5 text-xs font-bold text-forest-light">
+                      وفّر {saving}%
+                    </div>
                   )}
                 </div>
-                <p className="text-sm text-ink/60">{p.description}</p>
-              </div>
-              <div className="text-end">
-                <div className="font-heading font-extrabold text-gold-dark">
-                  {formatPrice(p.price)}
-                </div>
-                {p.oldPrice && (
-                  <div className="text-xs text-ink/40 line-through">
-                    {formatPrice(p.oldPrice)}
-                  </div>
-                )}
-              </div>
-            </button>
-          ))}
+              </button>
+            );
+          })}
         </div>
       </div>
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/utils";
+import CartUpsell from "@/components/CartUpsell";
 
 export default function CartPage() {
   const { items, subtotal, setQuantity, removeItem } = useCart();
@@ -97,30 +98,35 @@ export default function CartPage() {
           ))}
         </div>
 
-        {/* الملخّص */}
-        <div className="h-fit rounded-2xl bg-white p-6 shadow-soft">
-          <h2 className="font-heading text-xl font-bold text-forest">
-            ملخّص الطلب
-          </h2>
-          <div className="mt-4 flex items-center justify-between text-ink/70">
-            <span>المجموع الفرعي</span>
-            <span className="font-heading font-bold text-forest">
-              {formatPrice(subtotal)}
-            </span>
+        {/* الملخّص + اقتراح إضافي */}
+        <div className="h-fit space-y-5">
+          <div className="rounded-2xl bg-white p-6 shadow-soft">
+            <h2 className="font-heading text-xl font-bold text-forest">
+              ملخّص الطلب
+            </h2>
+            <div className="mt-4 flex items-center justify-between text-ink/70">
+              <span>المجموع الفرعي</span>
+              <span className="font-heading font-bold text-forest">
+                {formatPrice(subtotal)}
+              </span>
+            </div>
+            <p className="mt-1 text-sm text-ink/50">
+              تُحتسب رسوم التوصيل عند إتمام الطلب.
+            </p>
+            <Link href="/checkout" className="btn-gold mt-6 w-full">
+              متابعة الطلب
+            </Link>
+            <Link
+              href="/shop"
+              className="mt-3 flex items-center justify-center gap-1 text-sm font-bold text-forest hover:text-gold"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              مواصلة التسوّق
+            </Link>
           </div>
-          <p className="mt-1 text-sm text-ink/50">
-            تُحتسب رسوم التوصيل عند إتمام الطلب.
-          </p>
-          <Link href="/checkout" className="btn-gold mt-6 w-full">
-            متابعة الطلب
-          </Link>
-          <Link
-            href="/shop"
-            className="mt-3 flex items-center justify-center gap-1 text-sm font-bold text-forest hover:text-gold"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            مواصلة التسوّق
-          </Link>
+
+          {/* بيع إضافي */}
+          <CartUpsell />
         </div>
       </div>
     </div>
