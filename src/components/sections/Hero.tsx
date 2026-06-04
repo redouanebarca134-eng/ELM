@@ -102,24 +102,68 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* صورة المنتج العائمة */}
+        {/* صورة المنتج العائمة — مشهد سينمائي */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
-          className="relative hidden justify-center lg:flex"
+          className="relative flex justify-center"
         >
-          {/* هالة خلف المنتج */}
-          <div className="animate-glow-pulse absolute inset-0 m-auto h-72 w-72 rounded-full bg-gold/30 blur-3xl" />
+          {/* هالات متعدّدة الطبقات */}
+          <div className="animate-glow-pulse absolute inset-0 m-auto h-72 w-72 rounded-full bg-gold/35 blur-3xl sm:h-96 sm:w-96" />
+          <div
+            className="animate-glow-pulse absolute inset-0 m-auto h-60 w-60 rounded-full bg-teal/20 blur-3xl"
+            style={{ animationDelay: "1.2s" }}
+          />
+          {/* حلقة ضوئية دوّارة خلف المنتج */}
+          <div
+            className="absolute inset-0 m-auto h-80 w-80 rounded-full opacity-60 blur-md sm:h-[26rem] sm:w-[26rem]"
+            style={{
+              background:
+                "conic-gradient(from 0deg, transparent, rgba(201,162,75,0.5), transparent 60%)",
+              animation: "spin 14s linear infinite",
+            }}
+          />
+
           <div className="animate-float-slow relative">
             <Image
               src={SHILAJIT.image}
               alt={SHILAJIT.name}
-              width={380}
-              height={500}
-              className="relative z-10 rounded-3xl object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+              width={440}
+              height={580}
+              priority
+              className="relative z-10 w-56 rounded-3xl object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] sm:w-72 lg:w-[26rem]"
+            />
+            {/* انعكاس ناعم أسفل المنتج */}
+            <div
+              className="absolute inset-x-6 top-full -z-0 h-24 scale-y-[-1] rounded-3xl opacity-25 blur-md"
+              style={{
+                backgroundImage: `url(${SHILAJIT.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+                maskImage: "linear-gradient(to bottom, black, transparent)",
+                WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
+              }}
             />
           </div>
+
+          {/* شارة عائمة: تقييم */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.9, duration: 0.5 }}
+            className="glass absolute -bottom-2 start-0 z-20 flex items-center gap-2 rounded-2xl px-3 py-2 shadow-lg sm:start-4"
+          >
+            <span className="text-lg">⭐</span>
+            <div className="text-start leading-tight">
+              <div className="font-heading text-sm font-extrabold text-forest">
+                {SHILAJIT.rating}/5
+              </div>
+              <div className="text-[10px] text-forest/60">
+                {SHILAJIT.reviewsCount}+ تقييم
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
 
