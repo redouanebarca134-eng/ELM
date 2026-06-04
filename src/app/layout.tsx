@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import FacebookPixel from "@/components/FacebookPixel";
+import TikTokPixel from "@/components/TikTokPixel";
 import ScrollProgress from "@/components/ScrollProgress";
 import GrainOverlay from "@/components/GrainOverlay";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -66,6 +67,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <body className={`${tajawal.variable} ${almarai.variable}`}>
         <FacebookPixel />
+        <TikTokPixel />
         <GrainOverlay />
         <ScrollProgress />
         <CartProvider>
