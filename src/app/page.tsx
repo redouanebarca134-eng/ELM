@@ -29,6 +29,10 @@ const FOREST = "#14352A";
 export default function HomePage() {
   return (
     <>
+      {/* قصة العلامة ELM (أول ما يظهر) */}
+      <BrandStory />
+
+      {/* القسم البطولي */}
       <Hero />
 
       {/* بندج الثقة */}
@@ -49,9 +53,6 @@ export default function HomePage() {
 
       {/* شريط الإحصائيات بأرقام متصاعدة */}
       <StatsBand />
-
-      {/* قصة العلامة ELM */}
-      <BrandStory />
 
       {/* المشكلة / لماذا */}
       <section className="section-pad bg-cream">
