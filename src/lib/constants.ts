@@ -19,6 +19,7 @@ export const BRAND = {
 export const NAV_LINKS = [
   { href: "/", label: "الرئيسية" },
   { href: "/shop", label: "المتجر" },
+  { href: "/blog", label: "نصائح" },
   { href: "/about", label: "عن ELM" },
   { href: "/faq", label: "الأسئلة" },
   { href: "/contact", label: "اتصل بنا" },
