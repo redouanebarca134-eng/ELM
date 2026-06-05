@@ -18,11 +18,14 @@ connexion prête pour ta société de livraison.
 
 ## ⚙️ Configuration (à faire une fois dans Vercel)
 
-### 1. Créer la base de données
+### 1. Créer la base de données (Neon)
 1. Vercel → ton projet **elm** → onglet **Storage**
-2. **Create Database → Postgres** → valide
-3. **Connect** la base au projet (Vercel ajoute les variables
-   `POSTGRES_*` automatiquement)
+2. **Create Database → Neon (Serverless Postgres)** → valide
+3. **Connect** la base au projet (Vercel ajoute `DATABASE_URL`
+   automatiquement)
+
+> Note : Vercel Postgres a été migré vers **Neon**. Le code lit
+> `DATABASE_URL` (et reste compatible avec un ancien `POSTGRES_URL`).
 
 ### 2. Ajouter les secrets (Settings → Environment Variables)
 | Variable | Valeur | Rôle |

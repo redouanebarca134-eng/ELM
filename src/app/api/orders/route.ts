@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { createOrder } from "@/lib/orders/db";
 import type { NewOrder } from "@/lib/orders/types";
 
+export const dynamic = "force-dynamic";
+
 // POST /api/orders — إنشاء طلب جديد من صفحة الدفع.
 export async function POST(req: Request) {
   try {
