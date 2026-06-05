@@ -15,6 +15,7 @@
     "@remotion/google-fonts": "^4.0.471",
     "@remotion/tailwind": "^4.0.471",
     "@remotion/transitions": "^4.0.471",
+    "@vercel/postgres": "^0.10.0",
     "framer-motion": "^11.18.0",
     "lucide-react": "^0.474.0",
     "next": "^15.5.19",

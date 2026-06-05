@@ -83,6 +83,30 @@ export default function CheckoutPage() {
       content_type: "product",
       num_items: items.reduce((sum, i) => sum + i.quantity, 0),
     });
+
+    // حفظ الطلب في قاعدة البيانات (لا يُعطّل التجربة إن فشل)
+    void fetch("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        full_name: form.fullName,
+        phone: form.phone,
+        wilaya: form.wilaya,
+        commune: form.commune,
+        address: form.address,
+        delivery: form.delivery,
+        notes: form.notes || null,
+        items: items.map((i) => ({
+          slug: i.slug,
+          name: i.name,
+          price: i.price,
+          quantity: i.quantity,
+        })),
+        shipping: shippingCost,
+        total,
+      }),
+    }).catch(() => {});
+
     setConfirmed(snapshot);
     clear();
     globalThis.scrollTo({ top: 0, behavior: "smooth" });
