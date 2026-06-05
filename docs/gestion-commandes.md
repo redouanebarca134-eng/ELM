@@ -28,8 +28,28 @@ connexion prête pour ta société de livraison.
 | Variable | Valeur | Rôle |
 |---|---|---|
 | `ADMIN_PASSWORD` | un mot de passe fort de ton choix | accès à `/admin` |
-| `CARRIER_API_URL` | l'URL API de ton transporteur | créer les colis |
-| `CARRIER_TOKEN` | ton token de livraison | authentification |
+| `CARRIER_API_URL` | ton domaine Ecotrack (voir ci-dessous) | créer les colis |
+| `CARRIER_TOKEN` | ton token API Ecotrack | authentification |
+
+#### 🚚 Spécifique Ecotrack
+Ecotrack est une plateforme « white-label » : **chaque vendeur a son
+propre sous-domaine**. Ton `CARRIER_API_URL` est donc **l'adresse de ton
+espace Ecotrack**, par exemple :
+```
+https://votre-compte.ecotrack.dz
+```
+(sans `/` à la fin — c'est l'URL où tu te connectes à ton tableau de bord
+Ecotrack).
+
+**Trouver ton token :**
+1. Connecte-toi à ton espace Ecotrack
+2. Va dans **Paramètres / API** (ou « Profil → Jeton API »)
+3. Copie le **token** → colle-le dans `CARRIER_TOKEN`
+
+Le bouton « إنشاء التوصيل » du dashboard appelle
+`POST {CARRIER_API_URL}/api/v1/create/order` avec les bons champs
+Ecotrack (nom_client, telephone, adresse, commune, code_wilaya, montant,
+produit, type=1, stop_desk) et récupère le numéro de suivi.
 
 > ⚠️ Ces valeurs sont **secrètes** : elles vivent dans Vercel, jamais
 > dans le code public.
