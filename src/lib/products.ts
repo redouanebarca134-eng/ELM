@@ -41,11 +41,12 @@ export type Product = {
 };
 
 // فئات المتجر — أضف فئة جديدة هنا عند توسيع الجمعة
-export type CategoryId = "energy" | "detox" | "immunity";
+export type CategoryId = "energy" | "detox" | "immunity" | "beauty";
 
 export const CATEGORIES: { id: CategoryId; label: string; emoji: string }[] = [
   { id: "energy", label: "الطاقة والحيوية", emoji: "⚡" },
   { id: "detox", label: "التنحيف والتنقية", emoji: "🍃" },
+  { id: "beauty", label: "الجمال والعناية", emoji: "🌸" },
   { id: "immunity", label: "المناعة والتوازن", emoji: "🛡️" },
 ];
 
@@ -184,8 +185,78 @@ export const SLIM_TEA: Product = {
   },
 };
 
+// المنتج الثالث: Golden Shape — تركيبة طبيعية لدعم الوزن
+export const GOLDEN_SHAPE: Product = {
+  slug: "golden-shape",
+  name: "Golden Shape — تركيبة طبيعية",
+  shortName: "Golden Shape",
+  tagline: "تركيبة أنثوية طبيعية تساعد على دعم الشهية وزيادة الوزن الطبيعي",
+  description:
+    "Golden Shape مزيج من مكوّنات طبيعية مختارة بعناية، مصمّم لدعم الشهية ومرافقة من يبحثون عن زيادة وزن طبيعية ضمن نمط حياة متوازن. «الانسجام يبدأ من الداخل».",
+  image: "/images/golden-shape.png",
+  gallery: ["/images/golden-shape.png"],
+  price: 2500,
+  oldPrice: 3500,
+  rating: 4.8,
+  reviewsCount: 0,
+  stockNote: "متوفّر — يُشحن خلال 48 ساعة",
+  ingredients: "مكوّنات نباتية طبيعية 100%. العبوة: 150 غرام.",
+  usage: [
+    "خذ ملعقة صغيرة من المسحوق",
+    "أذِبها في كوب حليب دافئ أو عصير",
+    "تناولها مرة إلى مرتين يوميًا بعد الوجبات",
+  ],
+  warning:
+    "مكمّل غذائي ضمن نمط حياة متوازن. إذا كنتِ حاملًا أو مرضعة أو تتناول أدوية، استشر الطبيب قبل الاستعمال.",
+  packs: [
+    {
+      id: "single",
+      label: "علبة واحدة",
+      description: "150 غرام + متابعة عبر واتساب",
+      price: 2500,
+      oldPrice: 3500,
+    },
+    {
+      id: "double",
+      label: "علبتان",
+      description: "قيمة أفضل + متابعة ونصائح",
+      price: 4600,
+      oldPrice: 7000,
+      badge: "الأكثر طلباً",
+    },
+    {
+      id: "triple",
+      label: "3 علب",
+      description: "النتيجة الكاملة + توصيل مجاني للمكتب",
+      price: 6500,
+      oldPrice: 10500,
+      badge: "أكبر توفير",
+    },
+  ],
+  accent: "rose",
+  category: "beauty",
+  landing: {
+    heroLine: "الانسجام يبدأ من الداخل",
+    heroSub:
+      "تركيبة أنثوية طبيعية لدعم الشهية والوصول إلى الشكل الذي يريحكِ — بمكوّنات نباتية 100%.",
+    storyTitle: "عناية لطيفة بجمالكِ الطبيعي",
+    story:
+      "Golden Shape مزيج متناغم من مكوّنات نباتية مختارة بعناية. طقس يومي لطيف يرافقكِ نحو توازن أنثوي وثقة أكبر بنفسكِ — بلا وعود سحرية، بل عادة طبيعية ضمن نمط حياة صحي.",
+    highlights: [
+      { icon: "🌸", title: "تركيبة أنثوية", text: "مصمّمة لاحتياجاتكِ" },
+      { icon: "🍯", title: "دعم الشهية", text: "يساعد على الإقبال على الطعام" },
+      { icon: "🌿", title: "نباتي 100%", text: "مكوّنات طبيعية بلا إضافات" },
+      { icon: "🤝", title: "متابعة عبر واتساب", text: "نرافقكِ خطوة بخطوة" },
+    ],
+    problem:
+      "صعوبة في زيادة الوزن أو ضعف الشهية، والبحث عن حلّ طبيعي لطيف بعيدًا عن المنتجات المشكوك فيها.",
+    solution:
+      "Golden Shape تركيبة نباتية لطيفة تدعم شهيتكِ ضمن نمط حياة متوازن — مع مرافقة حقيقية، لا وعود فارغة.",
+  },
+};
+
 // كل المنتجات في المتجر
-export const PRODUCTS: Product[] = [SHILAJIT, SLIM_TEA];
+export const PRODUCTS: Product[] = [SHILAJIT, SLIM_TEA, GOLDEN_SHAPE];
 
 export function getProduct(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);

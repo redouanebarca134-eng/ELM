@@ -20,7 +20,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     answers: [
       { label: "طاقة وحيوية أكثر", scores: { shilajit: 2 } },
       { label: "خفّة وراحة هضمية", scores: { "slim-tea": 2 } },
-      { label: "تقوية المناعة والتوازن", scores: { shilajit: 1, "slim-tea": 1 } },
+      { label: "زيادة الوزن ودعم الشهية", scores: { "golden-shape": 2 } },
     ],
   },
   {
@@ -29,7 +29,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     answers: [
       { label: "تعب ونقص في التركيز", scores: { shilajit: 2 } },
       { label: "ثقل وانتفاخ بعد الأكل", scores: { "slim-tea": 2 } },
-      { label: "أريد فقط عادة صحية يومية", scores: { shilajit: 1, "slim-tea": 1 } },
+      { label: "ضعف الشهية وصعوبة زيادة الوزن", scores: { "golden-shape": 2 } },
     ],
   },
   {
