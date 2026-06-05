@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import ProductCard from "@/components/ProductCard";
-import { PRODUCTS } from "@/lib/products";
+import ShopGrid from "@/components/sections/ShopGrid";
 
 export const metadata: Metadata = {
   title: "المتجر",
-  description: "تسوّق منتجات ELM الطبيعية — شيلاجيت أصلي ومكمّلات صحية 100% طبيعية.",
+  description:
+    "تسوّق منتجات ELM الطبيعية — شيلاجيت أصلي ومكمّلات صحية 100% طبيعية، مصنّفة حسب احتياجك.",
 };
 
 export default function ShopPage() {
   return (
     <div className="bg-cream">
       {/* رأس الصفحة */}
-      <section className="bg-forest py-16 text-center">
-        <div className="container-elm">
+      <section className="relative overflow-hidden bg-forest py-16 text-center">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(201,162,75,0.18),transparent_55%)]" />
+        <div className="container-elm relative">
           <h1 className="font-heading text-4xl font-extrabold text-cream">
             متجر ELM
           </h1>
@@ -22,13 +23,9 @@ export default function ShopPage() {
         </div>
       </section>
 
-      {/* شبكة المنتجات */}
+      {/* شبكة المنتجات مع التصفية */}
       <section className="container-elm section-pad">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PRODUCTS.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
-        </div>
+        <ShopGrid />
       </section>
     </div>
   );

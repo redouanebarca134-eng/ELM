@@ -36,8 +36,18 @@ export type Product = {
   usage: string[];
   warning?: string;
   accent?: "gold" | "rose"; // لون التمييز للصفحة
+  category: CategoryId; // فئة المنتج
   landing?: Landing;
 };
+
+// فئات المتجر — أضف فئة جديدة هنا عند توسيع الجمعة
+export type CategoryId = "energy" | "detox" | "immunity";
+
+export const CATEGORIES: { id: CategoryId; label: string; emoji: string }[] = [
+  { id: "energy", label: "الطاقة والحيوية", emoji: "⚡" },
+  { id: "detox", label: "التنحيف والتنقية", emoji: "🍃" },
+  { id: "immunity", label: "المناعة والتوازن", emoji: "🛡️" },
+];
 
 // المنتج البطل: الشيلاجيت النقي
 export const SHILAJIT: Product = {
@@ -82,6 +92,7 @@ export const SHILAJIT: Product = {
     },
   ],
   accent: "gold",
+  category: "energy",
   landing: {
     heroLine: "قوّة الجبال في يديك",
     heroSub:
@@ -152,6 +163,7 @@ export const SLIM_TEA: Product = {
     },
   ],
   accent: "rose",
+  category: "detox",
   landing: {
     heroLine: "طقس يومي نحو الخفّة",
     heroSub:
@@ -177,4 +189,9 @@ export const PRODUCTS: Product[] = [SHILAJIT, SLIM_TEA];
 
 export function getProduct(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);
+}
+
+// الفئات التي تحتوي فعليًا على منتجات (لإخفاء الفارغة)
+export function activeCategories() {
+  return CATEGORIES.filter((c) => PRODUCTS.some((p) => p.category === c.id));
 }
