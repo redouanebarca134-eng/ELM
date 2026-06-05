@@ -20,8 +20,7 @@ export const ARTICLES: Article[] = [
     title: "كيف تميّز الشيلاجيت الأصلي من المقلّد؟",
     excerpt:
       "السوق مليء بالشيلاجيت المغشوش. تعرّف على 5 علامات بسيطة تساعدك على اختيار منتج أصلي وآمن.",
-    cover:
-      "https://images.unsplash.com/photo-1610700874055-2c20b3a91b6b?auto=format&fit=crop&w=1000&q=80",
+    cover: "/images/shilajit.png",
     category: "دليل الشراء",
     readMinutes: 4,
     date: "2026-05-20",
