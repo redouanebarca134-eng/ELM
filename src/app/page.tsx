@@ -216,11 +216,8 @@ export default function HomePage() {
             <p className="mx-auto mt-4 max-w-xl text-lg text-cream/80">
               انضم إلى آلاف العملاء الراضين — جودة مضمونة ودفع عند الاستلام.
             </p>
-            <Link
-              href="/product/shilajit"
-              className="btn-gold mx-auto mt-8 text-lg"
-            >
-              اطلب شيلاجيت ELM الآن
+            <Link href="/shop" className="btn-gold mx-auto mt-8 text-lg">
+              اكتشف كل منتجات ELM
             </Link>
           </Reveal>
         </div>

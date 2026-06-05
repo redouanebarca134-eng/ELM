@@ -98,7 +98,7 @@ export default function HeroStory() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-8 flex flex-col gap-3 sm:flex-row"
           >
-            <Link href="/product/shilajit" className="btn-gold">
+            <Link href="/shop" className="btn-gold">
               اطلب الآن — الدفع عند الاستلام
             </Link>
             <Link href="#benefits" className="btn-outline text-cream">

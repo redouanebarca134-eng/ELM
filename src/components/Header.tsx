@@ -51,7 +51,7 @@ export default function Header() {
             )}
           </Link>
 
-          <Link href="/product/shilajit" className="btn-gold hidden sm:inline-flex !min-h-[44px] !px-5 !py-2">
+          <Link href="/shop" className="btn-gold hidden sm:inline-flex !min-h-[44px] !px-5 !py-2">
             اطلب الآن
           </Link>
 
@@ -86,7 +86,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/product/shilajit"
+              href="/shop"
               onClick={() => setOpen(false)}
               className="btn-gold mt-2"
             >

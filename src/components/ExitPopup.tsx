@@ -81,7 +81,7 @@ export default function ExitPopup() {
               اذكر الكود عند التأكيد عبر واتساب للاستفادة من الخصم.
             </p>
             <Link
-              href="/product/shilajit"
+              href="/shop"
               onClick={() => setOpen(false)}
               className="btn-gold mt-6 w-full"
             >
