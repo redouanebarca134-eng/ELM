@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import HeroStory from "@/components/sections/HeroStory";
 import StatsBand from "@/components/sections/StatsBand";
+import ProductsShowcase from "@/components/sections/ProductsShowcase";
 import SectionHeading from "@/components/SectionHeading";
 import Reveal from "@/components/Reveal";
 import Accordion from "@/components/Accordion";
@@ -42,6 +43,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* عرض كل المنتجات */}
+      <ProductsShowcase />
 
       {/* شريط الإحصائيات بأرقام متصاعدة */}
       <StatsBand />
