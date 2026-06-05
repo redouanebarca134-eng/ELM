@@ -1,15 +1,17 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   Check,
   Sprout,
   ShieldCheck,
   HeartHandshake,
 } from "lucide-react";
-import { SHILAJIT } from "@/lib/products";
+import { PRODUCTS } from "@/lib/products";
+import { formatPrice } from "@/lib/utils";
 import GoldParticles from "@/components/GoldParticles";
 import Starfield from "@/components/Starfield";
 
@@ -25,8 +27,20 @@ const VALUES = [
   { icon: HeartHandshake, title: "الاحترام", text: "احترام لجسمك ولثقتك." },
 ];
 
-// قسم واحد متواصل: البطل (المنتج + الدعوة) ثم القصة — تحت سماء ليلية واحدة.
+// قسم واحد متواصل: البطل (عرض كل المنتجات بالتناوب) ثم القصة.
 export default function HeroStory() {
+  // كاروسيل تلقائي يعرض كل المنتجات
+  const [index, setIndex] = useState(0);
+  const product = PRODUCTS[index];
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % PRODUCTS.length),
+      4500,
+    );
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative overflow-hidden">
       {/* ═══ خلفية واحدة لكامل المشهد ═══ */}
@@ -66,7 +80,7 @@ export default function HeroStory() {
             transition={{ duration: 0.5 }}
             className="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 font-heading text-sm font-bold text-gold backdrop-blur-sm"
           >
-            🏔️ شيلاجيت أصلي 100% — ELM
+            🌿 ELM — منتجات طبيعية 100% مختارة بعناية
           </motion.span>
 
           <motion.h1
@@ -82,27 +96,55 @@ export default function HeroStory() {
             </span>
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-5 text-lg leading-relaxed text-cream/85 sm:text-xl"
-          >
-            {SHILAJIT.shortName} من ELM — راتنج طبيعي 100% مختار بعناية، غني
-            بأكثر من 80 معدنًا وحمض الفولفيك
-          </motion.p>
+          {/* اسم ووصف المنتج الحالي (يتبدّل) */}
+          <div className="mt-5 min-h-[6rem]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={product.slug}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.4 }}
+              >
+                <h2 className="font-heading text-2xl font-extrabold text-gold sm:text-3xl">
+                  {product.shortName}
+                  <span className="ms-3 align-middle text-lg font-bold text-cream/90">
+                    {formatPrice(product.price)}
+                  </span>
+                </h2>
+                <p className="mt-2 text-lg leading-relaxed text-cream/85">
+                  {product.tagline}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* نقاط التنقّل بين المنتجات */}
+          <div className="mt-4 flex gap-2">
+            {PRODUCTS.map((p, i) => (
+              <button
+                key={p.slug}
+                type="button"
+                aria-label={p.shortName}
+                onClick={() => setIndex(i)}
+                className={`h-2 rounded-full transition-all ${
+                  i === index ? "w-8 bg-gold" : "w-2 bg-cream/40"
+                }`}
+              />
+            ))}
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
+            className="mt-7 flex flex-col gap-3 sm:flex-row"
           >
-            <Link href="/shop" className="btn-gold">
+            <Link href={`/product/${product.slug}`} className="btn-gold">
               اطلب الآن — الدفع عند الاستلام
             </Link>
-            <Link href="#benefits" className="btn-outline text-cream">
-              اكتشف الفوائد
+            <Link href="/shop" className="btn-outline text-cream">
+              كل المنتجات
             </Link>
           </motion.div>
 
@@ -123,13 +165,8 @@ export default function HeroStory() {
           </motion.div>
         </div>
 
-        {/* صورة المنتج العائمة */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
-          className="relative flex justify-center"
-        >
+        {/* صورة المنتج العائمة — تتبدّل بين كل المنتجات */}
+        <div className="relative flex justify-center">
           <div className="animate-glow-pulse absolute inset-0 m-auto h-72 w-72 rounded-full bg-gold/35 blur-3xl sm:h-96 sm:w-96" />
           <div
             className="absolute inset-0 m-auto h-80 w-80 rounded-full opacity-60 blur-md sm:h-[26rem] sm:w-[26rem]"
@@ -139,43 +176,50 @@ export default function HeroStory() {
               animation: "spin 14s linear infinite",
             }}
           />
-          <div className="animate-float-slow relative">
-            <Image
-              src={SHILAJIT.image}
-              alt={SHILAJIT.name}
-              width={440}
-              height={580}
-              priority
-              className="relative z-10 w-56 rounded-3xl object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] sm:w-72 lg:w-[26rem]"
-            />
-            <div
-              className="absolute inset-x-6 top-full -z-0 h-24 scale-y-[-1] rounded-3xl opacity-25 blur-md"
-              style={{
-                backgroundImage: `url(${SHILAJIT.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "top",
-                maskImage: "linear-gradient(to bottom, black, transparent)",
-                WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
-              }}
-            />
-          </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.9, duration: 0.5 }}
-            className="glass absolute -bottom-2 start-0 z-20 flex items-center gap-2 rounded-2xl px-3 py-2 shadow-lg sm:start-4"
-          >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={product.slug}
+              initial={{ opacity: 0, scale: 0.85, rotateY: 25 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              exit={{ opacity: 0, scale: 0.85, rotateY: -25 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="animate-float-slow relative"
+            >
+              <Link href={`/product/${product.slug}`}>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={440}
+                  height={580}
+                  priority
+                  className="relative z-10 w-56 rounded-3xl object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] sm:w-72 lg:w-[26rem]"
+                />
+              </Link>
+              <div
+                className="absolute inset-x-6 top-full -z-0 h-24 scale-y-[-1] rounded-3xl opacity-25 blur-md"
+                style={{
+                  backgroundImage: `url(${product.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "top",
+                  maskImage: "linear-gradient(to bottom, black, transparent)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black, transparent)",
+                }}
+              />
+            </motion.div>
+          </AnimatePresence>
+          <div className="glass absolute -bottom-2 start-0 z-20 flex items-center gap-2 rounded-2xl px-3 py-2 shadow-lg sm:start-4">
             <span className="text-lg">⭐</span>
             <div className="text-start leading-tight">
               <div className="font-heading text-sm font-extrabold text-forest">
-                {SHILAJIT.rating}/5
+                {product.rating}/5
               </div>
               <div className="text-[10px] text-forest/60">
-                {SHILAJIT.reviewsCount}+ تقييم
+                {product.reviewsCount}+ تقييم
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
       {/* فاصل ناعم بصري (نفس الخلفية، مجرّد مسافة) */}
