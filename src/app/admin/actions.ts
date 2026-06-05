@@ -23,13 +23,23 @@ export async function ship(id: number) {
   if (!(await isAdmin())) return;
   const orders = await listOrders();
   const order = orders.find((o) => o.id === id);
-  if (!order) return;
+  if (!order) {
+    redirect("/admin?err=" + encodeURIComponent("الطلب غير موجود"));
+    return;
+  }
 
   const result = await createParcel(order);
   if (result.ok && result.tracking) {
     await setOrderTracking(id, result.tracking);
+    revalidatePath("/admin");
+    redirect("/admin?ok=" + encodeURIComponent(`تم إنشاء التوصيل: ${result.tracking}`));
+  } else {
+    // نُظهر سبب الفشل الحقيقي من Ecotrack
+    redirect(
+      "/admin?err=" +
+        encodeURIComponent(result.error || "فشل إنشاء التوصيل (سبب غير معروف)"),
+    );
   }
-  revalidatePath("/admin");
 }
 
 export async function logout() {

@@ -25,10 +25,15 @@ const STATUS_COLOR: Record<OrderStatus, string> = {
   returned: "bg-gray-200 text-gray-700",
 };
 
-export default async function AdminDashboard() {
+export default async function AdminDashboard({
+  searchParams,
+}: {
+  searchParams: Promise<{ ok?: string; err?: string }>;
+}) {
   if (!(await isAdmin())) redirect("/admin/login");
 
   const [orders, stats] = await Promise.all([listOrders(), orderStats()]);
+  const { ok, err } = await searchParams;
 
   return (
     <div className="min-h-screen bg-cream">
@@ -44,6 +49,18 @@ export default async function AdminDashboard() {
             </button>
           </form>
         </div>
+
+        {/* رسائل النتيجة */}
+        {ok && (
+          <div className="mt-4 rounded-2xl border border-green-300 bg-green-50 px-4 py-3 text-sm font-bold text-green-700">
+            ✅ {ok}
+          </div>
+        )}
+        {err && (
+          <div className="mt-4 rounded-2xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-bold text-red-700">
+            ⚠️ {err}
+          </div>
+        )}
 
         {/* الإحصائيات */}
         <div className="mt-6 grid grid-cols-3 gap-4">
