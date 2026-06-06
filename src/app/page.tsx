@@ -88,8 +88,8 @@ export default function HomePage() {
             <p className="mt-4 text-lg leading-relaxed text-ink/70">
               {SHILAJIT.description}
             </p>
-            <Link href="/product/shilajit" className="btn-forest mt-6">
-              اكتشف المنتج
+            <Link href="/shop" className="btn-forest mt-6">
+              اكتشف منتجاتنا
             </Link>
           </Reveal>
         </div>
