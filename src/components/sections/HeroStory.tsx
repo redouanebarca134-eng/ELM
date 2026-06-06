@@ -140,7 +140,7 @@ export default function HeroStory() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-7 flex flex-col gap-3 sm:flex-row"
           >
-            <Link href={`/product/${product.slug}`} className="btn-gold">
+            <Link href="/shop" className="btn-gold">
               اطلب الآن — الدفع عند الاستلام
             </Link>
             <Link href="/shop" className="btn-outline text-cream">
@@ -185,7 +185,7 @@ export default function HeroStory() {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="animate-float-slow relative"
             >
-              <Link href={`/product/${product.slug}`}>
+              <Link href="/shop">
                 <Image
                   src={product.image}
                   alt={product.name}
