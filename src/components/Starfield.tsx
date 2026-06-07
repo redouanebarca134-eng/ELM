@@ -23,22 +23,27 @@ export default function Starfield({ count = 60 }: { count?: number }) {
     [count],
   );
 
+  // عتبة: نُظهر أول ~45% فقط على الجوال لتخفيف الحِمل
+  const mobileCutoff = Math.ceil(count * 0.45);
+
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 overflow-hidden motion-reduce:hidden"
     >
       {stars.map((s, i) => (
         <span
           key={i}
-          className="absolute rounded-full bg-white"
+          className={`absolute rounded-full bg-white ${
+            i >= mobileCutoff ? "hidden sm:block" : ""
+          }`}
           style={{
             left: s.left,
             top: s.top,
             width: s.size,
             height: s.size,
             opacity: s.opacity,
-            boxShadow: `0 0 ${s.size * 2}px rgba(255,255,255,0.7)`,
+            boxShadow: `0 0 ${s.size * 2}px rgba(255,255,255,0.6)`,
             animation: `twinkle ${s.duration} ease-in-out ${s.delay} infinite`,
           }}
         />

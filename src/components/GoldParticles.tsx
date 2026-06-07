@@ -3,13 +3,11 @@
 import { useMemo } from "react";
 
 // خلفية جزيئات ذهبية متحرّكة (غبار ذهبي يطفو للأعلى).
-// خفيفة على الأداء — CSS فقط، بدون JavaScript في كل إطار.
+// خفيفة على الأداء — CSS فقط. تعرض عددًا أقل على الجوال لتحسين السرعة.
 export default function GoldParticles({ count = 26 }: { count?: number }) {
-  // قيم ثابتة لتفادي إعادة الحساب عند كل رسم
   const particles = useMemo(
     () =>
       Array.from({ length: count }).map((_, i) => {
-        // توزيع شبه عشوائي لكنه ثابت (مبني على الفهرس)
         const seed = (i * 9301 + 49297) % 233280;
         const rnd = seed / 233280;
         const rnd2 = ((i * 49297 + 9301) % 233280) / 233280;
@@ -24,19 +22,29 @@ export default function GoldParticles({ count = 26 }: { count?: number }) {
     [count],
   );
 
+  // عتبة: نُظهر أول ~40% فقط على الجوال
+  const mobileCutoff = Math.ceil(count * 0.4);
+
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden motion-reduce:hidden"
+      aria-hidden="true"
+    >
       {particles.map((p, i) => (
         <span
           key={i}
-          className="absolute bottom-0 rounded-full bg-gold"
+          className={`absolute bottom-0 rounded-full bg-gold ${
+            i >= mobileCutoff ? "hidden sm:block" : ""
+          }`}
           style={{
             left: p.left,
             width: p.size,
             height: p.size,
             opacity: p.opacity,
-            boxShadow: `0 0 ${p.size * 2}px rgba(201,162,75,0.8)`,
+            // الظل مكلف على الجوال — نتركه للشاشات الأكبر عبر CSS
+            boxShadow: `0 0 ${p.size * 2}px rgba(201,162,75,0.55)`,
             animation: `rise ${p.duration} linear ${p.delay} infinite`,
+            willChange: "transform",
           }}
         />
       ))}

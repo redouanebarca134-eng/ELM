@@ -61,10 +61,10 @@ export default function HeroStory() {
         </div>
         {/* سماء نجوم تمتدّ عبر كل المشهد */}
         <Starfield count={90} />
-        {/* كرات ضوئية ذهبية / فيروزية */}
-        <div className="animate-glow-pulse absolute -top-16 start-[12%] h-72 w-72 rounded-full bg-gold/25 blur-3xl" />
+        {/* كرات ضوئية ذهبية / فيروزية (مخفية على الجوال لتحسين الأداء) */}
+        <div className="animate-glow-pulse absolute -top-16 start-[12%] hidden h-72 w-72 rounded-full bg-gold/25 blur-3xl sm:block" />
         <div
-          className="animate-glow-pulse absolute top-[55%] end-[8%] h-80 w-80 rounded-full bg-teal/20 blur-3xl"
+          className="animate-glow-pulse absolute top-[55%] end-[8%] hidden h-80 w-80 rounded-full bg-teal/20 blur-3xl sm:block"
           style={{ animationDelay: "1.5s" }}
         />
         <GoldParticles count={30} />
@@ -191,7 +191,9 @@ export default function HeroStory() {
                   alt={product.name}
                   width={440}
                   height={580}
-                  priority
+                  priority={index === 0}
+                  quality={75}
+                  sizes="(max-width: 640px) 224px, (max-width: 1024px) 288px, 416px"
                   className="relative z-10 w-56 rounded-3xl object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] sm:w-72 lg:w-[26rem]"
                 />
               </Link>
