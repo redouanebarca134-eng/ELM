@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ShieldCheck, Truck, BadgeCheck } from "lucide-react";
 import { getProduct, PRODUCTS } from "@/lib/products";
 import ProductGallery from "@/components/ProductGallery";
-import AddToCartForm from "@/components/AddToCartForm";
+import OrderForm from "@/components/OrderForm";
 import ProductTabs from "@/components/ProductTabs";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
@@ -14,6 +14,7 @@ import CountdownTimer from "@/components/CountdownTimer";
 import StockBadge from "@/components/StockBadge";
 import ProductCinematic from "@/components/sections/ProductCinematic";
 import PriceJustification from "@/components/sections/PriceJustification";
+import WhyBuyHere from "@/components/sections/WhyBuyHere";
 import ReviewsWall from "@/components/sections/ReviewsWall";
 
 export function generateStaticParams() {
@@ -69,17 +70,15 @@ export default async function ProductPage({
         <span className="text-forest">{product.shortName}</span>
       </div>
 
-      {/* القسم الرئيسي — الشراء */}
+      {/* القسم الرئيسي — الشراء (نموذج الطلب مباشرة) */}
       <section
         id="buy"
         className="container-elm grid scroll-mt-20 gap-10 py-8 lg:grid-cols-2 lg:gap-14"
       >
-        {/* المعرض على اليمين (RTL) */}
-        <ProductGallery images={product.gallery} alt={product.name} />
-
-        {/* المعلومات على اليسار */}
+        {/* الصورة + معلومات المنتج */}
         <div>
-          <h1 className="font-heading text-3xl font-extrabold text-forest sm:text-4xl">
+          <ProductGallery images={product.gallery} alt={product.name} />
+          <h1 className="mt-6 font-heading text-3xl font-extrabold text-forest sm:text-4xl">
             {product.name}
           </h1>
           <div className="mt-3 flex items-center gap-3">
@@ -100,16 +99,17 @@ export default async function ProductPage({
             <CountdownTimer />
           </div>
 
-          <div className="mt-6">
-            <AddToCartForm product={product} />
-          </div>
-
           {/* بنود الثقة */}
-          <div className="mt-8 grid grid-cols-3 gap-3 border-t border-sand pt-6">
+          <div className="mt-6 grid grid-cols-3 gap-3 border-t border-sand pt-6">
             <TrustItem icon={ShieldCheck} label="عضوي 100%" />
             <TrustItem icon={BadgeCheck} label="عضوي معتمد Bio" />
             <TrustItem icon={Truck} label="دفع عند الاستلام" />
           </div>
+        </div>
+
+        {/* نموذج الطلب المباشر */}
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <OrderForm product={product} />
         </div>
       </section>
 
@@ -119,6 +119,9 @@ export default async function ProductPage({
           <ProductTabs product={product} />
         </div>
       </section>
+
+      {/* لماذا الشراء من ELM (تحليل السوق الجزائري) */}
+      <WhyBuyHere />
 
       {/* لماذا السعر؟ (للمنتجات المميّزة فقط) */}
       {product.price >= 4000 && (
