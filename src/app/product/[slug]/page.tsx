@@ -15,6 +15,7 @@ import StockBadge from "@/components/StockBadge";
 import ProductCinematic from "@/components/sections/ProductCinematic";
 import PriceJustification from "@/components/sections/PriceJustification";
 import WhyBuyHere from "@/components/sections/WhyBuyHere";
+import FeelingBlocks from "@/components/sections/FeelingBlocks";
 import ReviewsWall from "@/components/sections/ReviewsWall";
 
 export function generateStaticParams() {
@@ -112,6 +113,11 @@ export default async function ProductPage({
           <OrderForm product={product} />
         </div>
       </section>
+
+      {/* بلوكات عاطفية بصورة + نص (تثير الرغبة) */}
+      {product.landing?.feelings && (
+        <FeelingBlocks blocks={product.landing.feelings} />
+      )}
 
       {/* التبويبات */}
       <section className="container-elm py-8">
