@@ -15,6 +15,39 @@ export default function FeelingBlocks({
     <section className="bg-cream">
       {blocks.map((b, i) => {
         const reversed = i % 2 === 1;
+
+        // صورة تحتوي نصّها — تُعرض كاملة بعرض كامل (بلا نص جانبي)
+        if (b.banner) {
+          return (
+            <div
+              key={i}
+              className={i % 2 === 1 ? "bg-sand/30" : "bg-cream"}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6 }}
+                className="container-elm py-12"
+              >
+                <a href="#buy" className="block">
+                  <div className="relative w-full overflow-hidden rounded-3xl shadow-soft">
+                    <Image
+                      src={b.image}
+                      alt={b.title}
+                      width={2000}
+                      height={1050}
+                      sizes="(max-width: 1024px) 100vw, 1100px"
+                      quality={80}
+                      className="h-auto w-full object-contain"
+                    />
+                  </div>
+                </a>
+              </motion.div>
+            </div>
+          );
+        }
+
         return (
           <div
             key={i}

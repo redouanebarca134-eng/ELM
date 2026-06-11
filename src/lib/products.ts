@@ -14,6 +14,7 @@ export type FeelingBlock = {
   eyebrow: string; // كلمة فوق العنوان
   title: string; // عنوان عاطفي
   text: string; // نص يلامس المشاعر
+  banner?: boolean; // الصورة تحتوي نصّها — تُعرض كاملة بعرض كامل بلا نص جانبي
 };
 
 export type Landing = {
@@ -223,6 +224,7 @@ export const SLIM_TEA: Product = {
         eyebrow: "لستِ وحدك",
         title: "نرافقك خطوة بخطوة",
         text: "مع كل طلب، متابعة ونصائح عبر واتساب. لأن النتيجة الحقيقية تأتي بالاستمرار، ونحن معك في كل خطوة.",
+        banner: true,
       },
     ],
   },
