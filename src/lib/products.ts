@@ -299,16 +299,18 @@ export const GOLDEN_SHAPE: Product = {
       "Golden Shape تركيبة نباتية لطيفة تدعم شهيتكِ ضمن نمط حياة متوازن — مع مرافقة حقيقية، لا وعود فارغة.",
     feelings: [
       {
-        image: "/images/golden-shape.png",
+        image: "/images/golden-shape-lifestyle.png",
         eyebrow: "ثقة أنثوية",
         title: "انسجام يبدأ من الداخل",
         text: "حين تشعرين بالراحة مع جسمك، تشعّ ثقتك. Golden Shape تركيبة لطيفة ترافقك نحو التوازن الذي يريحك.",
+        banner: true,
       },
       {
-        image: "/images/golden-shape.png",
+        image: "/images/golden-shape-label.png",
         eyebrow: "طبيعي وآمن",
         title: "مكوّنات نباتية تثقين بها",
         text: "بعيدًا عن المنتجات المشكوك فيها — تركيبة نباتية 100% مع متابعة عبر واتساب خطوة بخطوة.",
+        banner: true,
       },
     ],
   },
