@@ -213,13 +213,13 @@ export const SLIM_TEA: Product = {
       "طقس Slim Tea اليومي اللطيف يساعدك على الاستمرار — مع متابعة ونصائح حقيقية، لا وعود سحرية.",
     feelings: [
       {
-        image: "/images/slim-tea.png",
+        image: "/images/slim-tea-ritual.png",
         eyebrow: "طقس يخصّك",
         title: "لحظة هدوء… ونتيجة تستمر",
         text: "كوب دافئ كل صباح يصبح عادتك المفضّلة. مذاق لطيف، إحساس بالخفّة، وثقة تكبر يومًا بعد يوم.",
       },
       {
-        image: "/images/slim-tea.png",
+        image: "/images/slim-tea-support.png",
         eyebrow: "لستِ وحدك",
         title: "نرافقك خطوة بخطوة",
         text: "مع كل طلب، متابعة ونصائح عبر واتساب. لأن النتيجة الحقيقية تأتي بالاستمرار، ونحن معك في كل خطوة.",
