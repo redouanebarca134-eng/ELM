@@ -35,8 +35,8 @@ export default function FeelingBlocks({
                     <Image
                       src={b.image}
                       alt={b.title}
-                      width={2000}
-                      height={1050}
+                      width={0}
+                      height={0}
                       sizes="(max-width: 1024px) 100vw, 1100px"
                       quality={80}
                       className="h-auto w-full object-contain"
