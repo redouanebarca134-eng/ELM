@@ -350,6 +350,13 @@ export const GOLDEN_SHAPE: Product = {
         banner: true,
       },
       {
+        image: "/images/golden-shape-benefits.jpg",
+        eyebrow: "تحوّل أنثوي",
+        title: "اكتسبي منحنياتكِ الحقيقية بشكل طبيعي",
+        text: "منحنيات محدّدة، صدر ممتلئ، وأنوثة وثقة مطلقة — بمكوّنات نباتية 100% وبشكل طبيعي بلا هرمونات.",
+        banner: true,
+      },
+      {
         image: "/images/golden-shape-result.jpg",
         eyebrow: "أنوثة ملفتة",
         title: "أنوثة واضحة وملفتة — بثقة جديدة",
