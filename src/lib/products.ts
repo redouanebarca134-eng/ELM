@@ -26,6 +26,7 @@ export type Landing = {
   problem: string; // المشكلة التي يحلّها
   solution: string; // الحل الذي يقدّمه المنتج
   feelings?: FeelingBlock[]; // بلوكات عاطفية بصورة + نص
+  reviewImages?: string[]; // لقطات شاشة لآراء العميلات (إثبات اجتماعي)
 };
 
 export type Product = {
@@ -220,17 +221,23 @@ export const SLIM_TEA: Product = {
         text: "كوب دافئ كل صباح يصبح عادتك المفضّلة. مذاق لطيف، إحساس بالخفّة، وثقة تكبر يومًا بعد يوم.",
       },
       {
-        image: "/images/slim-tea-confidence.png",
-        eyebrow: "ثقة جديدة",
-        title: "تطلّعين للمرآة وتبتسمين",
-        text: "القوام الذي حلمتِ به أصبح واقعًا. خفّة، رشاقة، وثقة تشعّ منكِ في كل خطوة — هذه أنتِ بأبهى صورة.",
+        image: "/images/slim-tea-support.png",
+        eyebrow: "لستِ وحدك",
+        title: "نرافقك خطوة بخطوة",
+        text: "مع كل طلب، متابعة ونصائح عبر واتساب. لأن النتيجة الحقيقية تأتي بالاستمرار، ونحن معك في كل خطوة.",
+        banner: true,
       },
-      {
-        image: "/images/slim-tea-style.png",
-        eyebrow: "إطلالة تليق بكِ",
-        title: "ملابسكِ المفضّلة تعود إليكِ",
-        text: "الفساتين التي توقّفتِ عن ارتدائها صارت تناسبكِ من جديد. استمتعي بكل إطلالة، وعيشي أناقتكِ بثقة كاملة.",
-      },
+    ],
+    reviewImages: [
+      "/images/reviews/review-01.jpg",
+      "/images/reviews/review-02.jpg",
+      "/images/reviews/review-03.jpg",
+      "/images/reviews/review-04.jpg",
+      "/images/reviews/review-05.jpg",
+      "/images/reviews/review-06.jpg",
+      "/images/reviews/review-07.jpg",
+      "/images/reviews/review-08.jpg",
+      "/images/reviews/review-09.jpg",
     ],
   },
 };

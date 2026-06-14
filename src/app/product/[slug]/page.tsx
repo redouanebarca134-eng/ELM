@@ -16,6 +16,7 @@ import ProductCinematic from "@/components/sections/ProductCinematic";
 import PriceJustification from "@/components/sections/PriceJustification";
 import WhyBuyHere from "@/components/sections/WhyBuyHere";
 import FeelingBlocks from "@/components/sections/FeelingBlocks";
+import ReviewShots from "@/components/sections/ReviewShots";
 import ReviewsWall from "@/components/sections/ReviewsWall";
 
 export function generateStaticParams() {
@@ -117,6 +118,11 @@ export default async function ProductPage({
       {/* بلوكات عاطفية بصورة + نص (تثير الرغبة) */}
       {product.landing?.feelings && (
         <FeelingBlocks blocks={product.landing.feelings} />
+      )}
+
+      {/* آراء العميلات — لقطات حقيقية (إثبات اجتماعي) */}
+      {product.landing?.reviewImages && (
+        <ReviewShots images={product.landing.reviewImages} />
       )}
 
       {/* التبويبات */}
