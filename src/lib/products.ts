@@ -15,6 +15,7 @@ export type FeelingBlock = {
   title: string; // عنوان عاطفي
   text: string; // نص يلامس المشاعر
   banner?: boolean; // الصورة تحتوي نصّها — تُعرض كاملة بعرض كامل بلا نص جانبي
+  note?: string; // ملاحظة صغيرة تظهر تحت الصورة (مثل: صور توضيحية)
 };
 
 export type Landing = {
@@ -241,6 +242,7 @@ export const SLIM_TEA: Product = {
         title: "تحوّل تشعرين به وتراه المرآة",
         text: "آلاف النساء استعدن رشاقتهنّ وثقتهنّ مع Slim Tea. القوام الذي تحلمين به أقرب مما تظنّين.",
         banner: true,
+        note: "صور توضيحية — النتائج تختلف من شخص لآخر حسب الالتزام ونمط الحياة.",
       },
       {
         image: "/images/slim-tea-transformation.jpg",
@@ -248,6 +250,7 @@ export const SLIM_TEA: Product = {
         title: "من اليوم الأول إلى 4 أسابيع",
         text: "نتيجة تدريجية وطبيعية تدوم. استعيدي ثقتكِ بنفسكِ بشكل طبيعي مع Slim Tea.",
         banner: true,
+        note: "صور توضيحية — النتائج تختلف من شخص لآخر حسب الالتزام ونمط الحياة.",
       },
     ],
     reviewImages: [

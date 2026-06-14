@@ -43,6 +43,11 @@ export default function FeelingBlocks({
                     />
                   </div>
                 </a>
+                {b.note && (
+                  <p className="mt-2 text-center text-xs text-ink/40">
+                    {b.note}
+                  </p>
+                )}
               </motion.div>
             </div>
           );

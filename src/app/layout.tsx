@@ -54,8 +54,21 @@ export const metadata: Metadata = {
     locale: "ar_DZ",
     siteName: "ELM",
     images: [
-      { url: "/og-image.svg", width: 1200, height: 630, alt: "ELM شيلاجيت" },
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ELM — الصحة الطبيعية",
+        type: "image/png",
+      },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ELM — الصحة الطبيعية",
+    description:
+      "منتجات طبيعية 100% — شيلاجيت أصلي وشاي أعشاب. دفع عند الاستلام • توصيل لكل الولايات.",
+    images: ["/og-image.png"],
   },
   icons: { icon: "/favicon.svg" },
 };
