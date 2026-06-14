@@ -84,7 +84,7 @@ export default function ReviewShots({ images }: { images: string[] }) {
             width={800}
             height={0}
             sizes="100vw"
-            quality={85}
+            quality={90}
             onClick={(e) => e.stopPropagation()}
             className="max-h-[90vh] w-auto rounded-2xl object-contain shadow-2xl"
           />

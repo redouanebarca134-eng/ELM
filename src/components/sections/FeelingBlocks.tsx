@@ -38,7 +38,7 @@ export default function FeelingBlocks({
                       width={0}
                       height={0}
                       sizes="(max-width: 1024px) 100vw, 1100px"
-                      quality={80}
+                      quality={75}
                       className="h-auto w-full object-contain"
                     />
                   </div>
