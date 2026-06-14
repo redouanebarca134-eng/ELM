@@ -318,7 +318,7 @@ export const GOLDEN_SHAPE: Product = {
   accent: "rose",
   category: "beauty",
   landing: {
-    heroLine: "قوامكِ الذي حلمتِ به يبدأ اليوم 🌹",
+    heroLine: "حيّري عديانك 🌹",
     heroSub:
       "تركيبة أنثوية نباتية 100% تدعم الشهية وامتلاء القوام بأنوثة وثقة — بلا هرمونات، ومع متابعة حقيقية عبر واتساب.",
     storyTitle: "عناية لطيفة بجمالكِ الطبيعي",
