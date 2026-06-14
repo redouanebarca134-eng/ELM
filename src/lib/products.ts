@@ -249,13 +249,6 @@ export const SLIM_TEA: Product = {
         text: "نتيجة تدريجية وطبيعية تدوم. استعيدي ثقتكِ بنفسكِ بشكل طبيعي مع Slim Tea.",
         banner: true,
       },
-      {
-        image: "/images/slim-tea-support.png",
-        eyebrow: "لستِ وحدك",
-        title: "نرافقك خطوة بخطوة",
-        text: "مع كل طلب، متابعة ونصائح عبر واتساب. لأن النتيجة الحقيقية تأتي بالاستمرار، ونحن معك في كل خطوة.",
-        banner: true,
-      },
     ],
     reviewImages: [
       "/images/reviews/review-01.jpg",
