@@ -34,8 +34,13 @@ export default function OrderForm({ product }: { product: Product }) {
 
   const pack = product.packs.find((p) => p.id === packId) ?? product.packs[0];
   const shipping = useMemo(
-    () => (delivery === "home" ? SHIPPING.home : SHIPPING.stopdesk),
-    [delivery],
+    () =>
+      product.freeShipping
+        ? 0
+        : delivery === "home"
+          ? SHIPPING.home
+          : SHIPPING.stopdesk,
+    [delivery, product.freeShipping],
   );
   const subtotal = pack.price * qty;
   const total = subtotal + shipping;
@@ -279,14 +284,14 @@ export default function OrderForm({ product }: { product: Product }) {
               onClick={() => setDelivery("home")}
               icon={Home}
               title="للمنزل"
-              price={SHIPPING.home}
+              price={product.freeShipping ? 0 : SHIPPING.home}
             />
             <DeliveryBtn
               active={delivery === "stopdesk"}
               onClick={() => setDelivery("stopdesk")}
               icon={Building2}
               title="للمكتب"
-              price={SHIPPING.stopdesk}
+              price={product.freeShipping ? 0 : SHIPPING.stopdesk}
             />
           </div>
         </div>
@@ -317,7 +322,10 @@ export default function OrderForm({ product }: { product: Product }) {
       {/* المجموع */}
       <div className="mt-4 space-y-1 border-t border-sand pt-3 text-sm">
         <Row label="المجموع الفرعي" value={formatPrice(subtotal)} />
-        <Row label="رسوم التوصيل" value={formatPrice(shipping)} />
+        <Row
+          label="رسوم التوصيل"
+          value={shipping === 0 ? "مجاني 🎉" : formatPrice(shipping)}
+        />
         <div className="flex justify-between border-t border-sand pt-2 font-heading text-lg font-extrabold text-forest">
           <span>المجموع</span>
           <span className="text-gold-dark">{formatPrice(total)}</span>
@@ -393,7 +401,9 @@ function DeliveryBtn({
       <Icon className="h-5 w-5 text-forest-light" />
       <span className="text-sm">
         <span className="block font-bold text-forest">{title}</span>
-        <span className="text-ink/60">{formatPrice(price)}</span>
+        <span className="text-ink/60">
+          {price === 0 ? "مجاني" : formatPrice(price)}
+        </span>
       </span>
     </button>
   );

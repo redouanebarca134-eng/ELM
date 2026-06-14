@@ -49,6 +49,7 @@ export type Product = {
   warning?: string;
   accent?: "gold" | "rose"; // لون التمييز للصفحة
   category: CategoryId; // فئة المنتج
+  freeShipping?: boolean; // توصيل مجاني على كل عروض هذا المنتج
   landing?: Landing;
 };
 
@@ -294,14 +295,14 @@ export const GOLDEN_SHAPE: Product = {
     {
       id: "single",
       label: "علبة واحدة",
-      description: "150 غرام + متابعة عبر واتساب",
+      description: "150 غرام + توصيل مجاني 🚚 + متابعة عبر واتساب",
       price: 3200,
       oldPrice: 4500,
     },
     {
       id: "double",
       label: "علبتان",
-      description: "قيمة أفضل + متابعة ونصائح",
+      description: "قيمة أفضل + توصيل مجاني 🚚 + متابعة ونصائح",
       price: 5500,
       oldPrice: 6400,
       badge: "الأكثر طلباً",
@@ -312,11 +313,12 @@ export const GOLDEN_SHAPE: Product = {
       description: "النتيجة الكاملة + توصيل مجاني 🚚",
       price: 7500,
       oldPrice: 9600,
-      badge: "توصيل مجاني",
+      badge: "أكبر توفير",
     },
   ],
   accent: "rose",
   category: "beauty",
+  freeShipping: true,
   landing: {
     heroLine: "حيّري عديانك 🌹",
     heroSub:

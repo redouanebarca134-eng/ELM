@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { CheckCircle2, MessageCircle, Home, Building2 } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { getProduct } from "@/lib/products";
 import { WILAYAS } from "@/lib/wilayas";
 import { SHIPPING, buildWhatsAppLink } from "@/lib/constants";
 import { formatPrice, cn } from "@/lib/utils";
@@ -49,9 +50,19 @@ export default function CheckoutPage() {
     total: number;
   } | null>(null);
 
+  // توصيل مجاني إذا كانت كل المنتجات في السلة تتمتّع بالتوصيل المجاني
+  const freeShipping = useMemo(
+    () => items.length > 0 && items.every((i) => getProduct(i.slug)?.freeShipping),
+    [items],
+  );
   const shippingCost = useMemo(
-    () => (form.delivery === "home" ? SHIPPING.home : SHIPPING.stopdesk),
-    [form.delivery],
+    () =>
+      freeShipping
+        ? 0
+        : form.delivery === "home"
+          ? SHIPPING.home
+          : SHIPPING.stopdesk,
+    [form.delivery, freeShipping],
   );
   const total = subtotal + shippingCost;
 
@@ -284,14 +295,14 @@ ${confirmed.form.notes ? `\nملاحظات: ${confirmed.form.notes}` : ""}`;
                 onClick={() => update("delivery", "home")}
                 icon={Home}
                 title="توصيل للمنزل"
-                price={SHIPPING.home}
+                price={freeShipping ? 0 : SHIPPING.home}
               />
               <DeliveryOption
                 active={form.delivery === "stopdesk"}
                 onClick={() => update("delivery", "stopdesk")}
                 icon={Building2}
                 title="التوصيل للمكتب"
-                price={SHIPPING.stopdesk}
+                price={freeShipping ? 0 : SHIPPING.stopdesk}
               />
             </div>
           </div>
@@ -335,7 +346,9 @@ ${confirmed.form.notes ? `\nملاحظات: ${confirmed.form.notes}` : ""}`;
             </div>
             <div className="flex justify-between text-ink/70">
               <span>رسوم التوصيل</span>
-              <span>{formatPrice(shippingCost)}</span>
+              <span>
+                {shippingCost === 0 ? "مجاني 🎉" : formatPrice(shippingCost)}
+              </span>
             </div>
             <div className="flex justify-between border-t border-sand pt-2 font-heading text-lg font-extrabold text-forest">
               <span>المجموع</span>
@@ -415,7 +428,9 @@ function DeliveryOption({
       <Icon className="h-6 w-6 text-forest-light" />
       <div>
         <div className="font-heading font-bold text-forest">{title}</div>
-        <div className="text-sm text-ink/60">{formatPrice(price)}</div>
+        <div className="text-sm text-ink/60">
+          {price === 0 ? "مجاني" : formatPrice(price)}
+        </div>
       </div>
     </button>
   );
