@@ -197,7 +197,7 @@ export const SLIM_TEA: Product = {
   accent: "rose",
   category: "detox",
   landing: {
-    heroLine: "طقس يومي نحو الخفّة",
+    heroLine: "رجّعي تلبسي اللي تحبّي — بثقة وخفّة من جديد 🌿",
     heroSub:
       "مزيج من أعشاب مختارة بعناية لدعم الأيض والراحة الهضمية ضمن نمط حياة متوازن.",
     storyTitle: "رشفة من الطبيعة",
