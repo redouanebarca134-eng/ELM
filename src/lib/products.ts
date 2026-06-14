@@ -215,10 +215,32 @@ export const SLIM_TEA: Product = {
       "طقس Slim Tea اليومي اللطيف يساعدك على الاستمرار — مع متابعة ونصائح حقيقية، لا وعود سحرية.",
     feelings: [
       {
-        image: "/images/slim-tea-ritual.png",
-        eyebrow: "طقس يخصّك",
-        title: "لحظة هدوء… ونتيجة تستمر",
-        text: "كوب دافئ كل صباح يصبح عادتك المفضّلة. مذاق لطيف، إحساس بالخفّة، وثقة تكبر يومًا بعد يوم.",
+        image: "/images/slim-tea-obesity.png",
+        eyebrow: "لماذا الآن؟",
+        title: "الوزن الزائد ليس مجرد مظهر",
+        text: "السمنة خطر صحي صامت يهدد القلب، المفاصل، والهضم. كل يوم تأجيل يزيد المعاناة — والبداية اليوم أسهل من الغد.",
+        banner: true,
+      },
+      {
+        image: "/images/slim-tea-ingredients.png",
+        eyebrow: "تركيبة مدروسة",
+        title: "أعشاب طبيعية 100% بفعالية حقيقية",
+        text: "خلطة متوازنة تحرق الدهون، تحسّن الهضم، تقلّل الشهية وتهدّئ الجسم — بدون أي مواد كيميائية.",
+        banner: true,
+      },
+      {
+        image: "/images/slim-tea-before-after.png",
+        eyebrow: "نتائج حقيقية",
+        title: "تحوّل تشعرين به وتراه المرآة",
+        text: "آلاف النساء استعدن رشاقتهنّ وثقتهنّ مع Slim Tea. القوام الذي تحلمين به أقرب مما تظنّين.",
+        banner: true,
+      },
+      {
+        image: "/images/slim-tea-transformation.png",
+        eyebrow: "خطوة بخطوة",
+        title: "من اليوم الأول إلى 4 أسابيع",
+        text: "نتيجة تدريجية وطبيعية تدوم. استعيدي ثقتكِ بنفسكِ بشكل طبيعي مع Slim Tea.",
+        banner: true,
       },
       {
         image: "/images/slim-tea-support.png",
