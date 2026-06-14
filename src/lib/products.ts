@@ -72,8 +72,8 @@ export const SHILAJIT: Product = {
     "راتنج طبيعي 100% غني بحمض الفولفيك والمعادن — للطاقة والأداء والتوازن",
   description:
     "الشيلاجيت النقي من ELM راتنج طبيعي مختار بعناية لنقائه وجودته. غني بحمض الفولفيك والمعادن، يرافق الأشخاص النشيطين الباحثين عن الطاقة والأداء والتوازن في حياتهم اليومية.",
-  image: "/images/shilajit.png",
-  gallery: ["/images/shilajit.png"],
+  image: "/images/shilajit.webp",
+  gallery: ["/images/shilajit.webp"],
   price: 4900,
   oldPrice: 5800,
   rating: 4.9,
@@ -126,19 +126,19 @@ export const SHILAJIT: Product = {
       "شيلاجيت ELM أصلي ونقي، مُختبَر ومعتمد عضويًا. القوة الحقيقية للطبيعة، بلا غش ولا وعود فارغة.",
     feelings: [
       {
-        image: "/images/shilajit-energy.png",
+        image: "/images/shilajit-energy.webp",
         eyebrow: "استعد طاقتك",
         title: "تخيّل يومك بطاقة لا تنطفئ",
         text: "تنهض في الصباح بحيوية، تركيز صافٍ في العمل، وقدرة على التحمّل لا تخذلك. هذا ما يبحث عنه آلاف عملائنا — وهذا ما يقدّمه الشيلاجيت النقي.",
       },
       {
-        image: "/images/shilajit-nature.png",
+        image: "/images/shilajit-nature.webp",
         eyebrow: "من قلب الجبال",
         title: "قوة الطبيعة في أنقى صورها",
         text: "راتنج نادر يتشكّل في صخور الجبال عبر مئات السنين، غني بأكثر من 80 معدنًا وحمض الفولفيك. ما تضعه في جسمك يستحق أن يكون الأنقى.",
       },
       {
-        image: "/images/shilajit-scene.png",
+        image: "/images/shilajit-scene.webp",
         eyebrow: "ثقة بلا قلق",
         title: "لن تشتري المغشوش بعد اليوم",
         text: "تعبتَ من المنتجات المقلّدة التي لا تعطي نتيجة؟ شيلاجيت ELM عضوي معتمد ومُختبَر — تمسكه بيدك، تتفقّده، ثم تدفع. راحة بال كاملة.",
@@ -155,8 +155,8 @@ export const SLIM_TEA: Product = {
   tagline: "شاي أعشاب طبيعي لدعم فقدان الوزن والمساعدة على حرق الدهون",
   description:
     "Slim Tea مشروب من أعشاب مختارة بعناية، مصمّم لدعم عملية الأيض وتحسين الراحة الهضمية، يندمج بسهولة ضمن نمط حياة صحي ومتوازن.",
-  image: "/images/slim-tea.png",
-  gallery: ["/images/slim-tea.png"],
+  image: "/images/slim-tea.webp",
+  gallery: ["/images/slim-tea.webp"],
   price: 1790,
   oldPrice: 3500,
   rating: 4.8,
@@ -217,28 +217,28 @@ export const SLIM_TEA: Product = {
       "طقس Slim Tea اليومي اللطيف يساعدك على الاستمرار — مع متابعة ونصائح حقيقية، لا وعود سحرية.",
     feelings: [
       {
-        image: "/images/slim-tea-hero-scene.jpg",
+        image: "/images/slim-tea-hero-scene.webp",
         eyebrow: "سرّكِ الطبيعي",
         title: "سرّ رشاقتكِ الطبيعية",
         text: "ELM Slim Tea — طقس يومي لطيف من أعشاب طبيعية، يرافقكِ نحو الرشاقة والخفّة بثقة.",
         banner: true,
       },
       {
-        image: "/images/slim-tea-obesity.jpg",
+        image: "/images/slim-tea-obesity.webp",
         eyebrow: "لماذا الآن؟",
         title: "الوزن الزائد ليس مجرد مظهر",
         text: "السمنة خطر صحي صامت يهدد القلب، المفاصل، والهضم. كل يوم تأجيل يزيد المعاناة — والبداية اليوم أسهل من الغد.",
         banner: true,
       },
       {
-        image: "/images/slim-tea-ingredients.jpg",
+        image: "/images/slim-tea-ingredients.webp",
         eyebrow: "تركيبة مدروسة",
         title: "أعشاب طبيعية 100% بفعالية حقيقية",
         text: "خلطة متوازنة تحرق الدهون، تحسّن الهضم، تقلّل الشهية وتهدّئ الجسم — بدون أي مواد كيميائية.",
         banner: true,
       },
       {
-        image: "/images/slim-tea-before-after.jpg",
+        image: "/images/slim-tea-before-after.webp",
         eyebrow: "نتائج حقيقية",
         title: "تحوّل تشعرين به وتراه المرآة",
         text: "آلاف النساء استعدن رشاقتهنّ وثقتهنّ مع Slim Tea. القوام الذي تحلمين به أقرب مما تظنّين.",
@@ -246,7 +246,7 @@ export const SLIM_TEA: Product = {
         note: "صور توضيحية — النتائج تختلف من شخص لآخر حسب الالتزام ونمط الحياة.",
       },
       {
-        image: "/images/slim-tea-transformation.jpg",
+        image: "/images/slim-tea-transformation.webp",
         eyebrow: "خطوة بخطوة",
         title: "من اليوم الأول إلى 4 أسابيع",
         text: "نتيجة تدريجية وطبيعية تدوم. استعيدي ثقتكِ بنفسكِ بشكل طبيعي مع Slim Tea.",
@@ -276,8 +276,8 @@ export const GOLDEN_SHAPE: Product = {
   tagline: "تركيبة أنثوية طبيعية تساعد على دعم الشهية وزيادة الوزن الطبيعي",
   description:
     "Golden Shape مزيج من مكوّنات طبيعية مختارة بعناية، مصمّم لدعم الشهية ومرافقة من يبحثون عن زيادة وزن طبيعية ضمن نمط حياة متوازن. «الانسجام يبدأ من الداخل».",
-  image: "/images/golden-shape.png",
-  gallery: ["/images/golden-shape.png"],
+  image: "/images/golden-shape.webp",
+  gallery: ["/images/golden-shape.webp"],
   price: 3200,
   oldPrice: 4500,
   rating: 4.8,
@@ -338,28 +338,28 @@ export const GOLDEN_SHAPE: Product = {
       "Golden Shape تركيبة نباتية 100% تدعم شهيتكِ وامتلاء قوامكِ بطريقة طبيعية وآمنة — بلا هرمونات ولا وعود فارغة، مع مرافقة حقيقية خطوة بخطوة.",
     feelings: [
       {
-        image: "/images/golden-shape-hero.jpg",
+        image: "/images/golden-shape-hero.webp",
         eyebrow: "مستعدة للتغيير؟",
         title: "قوامكِ الذي حلمتِ به يبدأ اليوم",
         text: "تركيبة من مكوّنات نباتية مختارة بعناية تدعم الشهية وامتلاء القوام — لتكوني الأجمل بثقة وأنوثة.",
         banner: true,
       },
       {
-        image: "/images/golden-shape-dream.jpg",
+        image: "/images/golden-shape-dream.webp",
         eyebrow: "حلمكِ يقترب",
         title: "المنحنيات الجذابة التي طالما حلمتِ بها",
         text: "قوام أنثوي ممتلئ ومتناسق يمنحكِ الثقة في كل إطلالة. Golden Shape ترافقكِ نحو الشكل الذي يريحكِ.",
         banner: true,
       },
       {
-        image: "/images/golden-shape-benefits.jpg",
+        image: "/images/golden-shape-benefits.webp",
         eyebrow: "تحوّل أنثوي",
         title: "اكتسبي منحنياتكِ الحقيقية بشكل طبيعي",
         text: "منحنيات محدّدة، صدر ممتلئ، وأنوثة وثقة مطلقة — بمكوّنات نباتية 100% وبشكل طبيعي بلا هرمونات.",
         banner: true,
       },
       {
-        image: "/images/golden-shape-result.jpg",
+        image: "/images/golden-shape-result.webp",
         eyebrow: "أنوثة ملفتة",
         title: "أنوثة واضحة وملفتة — بثقة جديدة",
         text: "امتلاء طبيعي يبرز أنوثتكِ ويعيد لكِ ثقتكِ بنفسكِ، بمكوّنات نباتية 100% وبلا هرمونات.",
@@ -367,7 +367,7 @@ export const GOLDEN_SHAPE: Product = {
         note: "صور توضيحية — النتائج تختلف من شخص لآخر حسب الالتزام ونمط الحياة والتغذية.",
       },
       {
-        image: "/images/golden-shape-social.jpg",
+        image: "/images/golden-shape-social.webp",
         eyebrow: "الكل يلاحظ",
         title: "اليوم كل الأنظار عليكِ",
         text: "النتيجة التي تُلاحَظ وتُحسد عليها. سرّكِ الطبيعي للأنوثة والثقة هو Golden Shape.",
@@ -375,7 +375,7 @@ export const GOLDEN_SHAPE: Product = {
         note: "صور توضيحية — النتائج تختلف من شخص لآخر حسب الالتزام ونمط الحياة والتغذية.",
       },
       {
-        image: "/images/golden-shape-confidence.jpg",
+        image: "/images/golden-shape-confidence.webp",
         eyebrow: "ثقة بلا حدود",
         title: "اكتشفي امتلاء قوامكِ المثالي",
         text: "حين تشعرين بالراحة مع جسمكِ، تشعّ ثقتكِ. ابدئي رحلتكِ نحو القوام الذي يريحكِ اليوم.",
