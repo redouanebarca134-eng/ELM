@@ -140,8 +140,14 @@ export default async function ProductPage({
         <PriceJustification realPrice={product.price} />
       )}
 
-      {/* جدار آراء العملاء */}
-      <ReviewsWall />
+      {/* جدار آراء العملاء — خاص بكل منتج */}
+      <ReviewsWall
+        testimonials={product.landing?.reviews}
+        rating={product.rating}
+        count={product.reviewsCount}
+        title={`عملاء ${product.shortName} يحكون تجربتهم`}
+        subtitle="تقييمات من عملاء حقيقيين عبر كل الولايات."
+      />
 
       {/* منتجات ذات صلة */}
       {related.length > 0 && (

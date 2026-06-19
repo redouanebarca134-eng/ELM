@@ -5,6 +5,7 @@ import { BadgeCheck } from "lucide-react";
 import Stars from "@/components/Stars";
 import SectionHeading from "@/components/SectionHeading";
 import { TESTIMONIALS } from "@/lib/content";
+import type { Testimonial } from "@/lib/products";
 
 // جدار آراء العملاء — أحرف أولى ملوّنة + شارة "موثّق" + توزيع masonry خفيف.
 // دليل اجتماعي قوي (أساسي للدفع عند الاستلام).
@@ -16,15 +17,24 @@ const AVATAR_COLORS = [
   "bg-forest",
 ];
 
-export default function ReviewsWall() {
+// تُستعمل عامة في الصفحة الرئيسية، أو بآراء خاصة بكل منتج في صفحته.
+export default function ReviewsWall({
+  testimonials = TESTIMONIALS,
+  rating = 4.9,
+  count = 500,
+  title = "آلاف العملاء يثقون بـ ELM",
+  subtitle = "تقييمات من عملاء حقيقيين عبر كل الولايات.",
+}: {
+  testimonials?: Testimonial[];
+  rating?: number;
+  count?: number;
+  title?: string;
+  subtitle?: string;
+} = {}) {
   return (
     <section className="mesh-cream section-pad">
       <div className="container-elm">
-        <SectionHeading
-          eyebrow="آراء حقيقية"
-          title="آلاف العملاء يثقون بـ ELM"
-          subtitle="تقييمات من عملاء حقيقيين عبر كل الولايات."
-        />
+        <SectionHeading eyebrow="آراء حقيقية" title={title} subtitle={subtitle} />
 
         {/* ملخّص التقييم */}
         <motion.div
@@ -34,17 +44,19 @@ export default function ReviewsWall() {
           className="mx-auto mt-8 flex w-fit items-center gap-4 rounded-2xl border border-gold/30 bg-white px-6 py-4 shadow-soft"
         >
           <span className="font-heading text-4xl font-extrabold text-gold-dark">
-            4.9
+            {rating}
           </span>
           <div className="text-start">
             <Stars rating={5} />
-            <p className="mt-1 text-sm text-ink/60">من أكثر من 500 تقييم</p>
+            <p className="mt-1 text-sm text-ink/60">
+              من أكثر من {count} تقييم
+            </p>
           </div>
         </motion.div>
 
         {/* الشبكة */}
         <div className="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5 [&>*]:break-inside-avoid">
-          {TESTIMONIALS.map((t, i) => (
+          {testimonials.map((t, i) => (
             <motion.figure
               key={t.name}
               initial={{ opacity: 0, y: 30 }}
